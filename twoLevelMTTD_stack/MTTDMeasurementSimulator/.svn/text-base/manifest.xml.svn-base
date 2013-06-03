@@ -1,0 +1,25 @@
+<package>
+  <description brief="MTTDMeasurementSimulator">
+
+     MTTDMeasurementSimulator
+
+    This is a class to simulate laser scanner measurements for multiple circular
+targets moving with a constant n'th order derivative model (cte position, cte
+velocity, ...).
+
+  </description>
+  <author>Tinne De Laet</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/MTTDMeasurementSimulator</url>
+
+  <depend package="rtt_1.10" />
+  <depend package="ocl_1.10" />
+  <depend package="bfl_dataAssociationBranch" />
+  <export>
+        <rosdoc config="rosdoc.yaml" />
+  </export>
+
+</package>
+
+

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/wu-ros-pkg/!svn/ver/46/stacks/wu_ptu/trunk/ptu_control/action
+END
+PtuReset.action
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/wu-ros-pkg/!svn/ver/46/stacks/wu_ptu/trunk/ptu_control/action/PtuReset.action
+END
+PtuSetVel.action
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/wu-ros-pkg/!svn/ver/46/stacks/wu_ptu/trunk/ptu_control/action/PtuSetVel.action
+END
+PtuGoto.action
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/wu-ros-pkg/!svn/ver/46/stacks/wu_ptu/trunk/ptu_control/action/PtuGoto.action
+END

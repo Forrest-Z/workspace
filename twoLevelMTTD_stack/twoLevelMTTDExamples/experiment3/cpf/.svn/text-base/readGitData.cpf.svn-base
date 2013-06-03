@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+  <simple name="xFile" type="string"><description>file containing the x positions of the measurements</description><value>x.txt</value></simple>
+  <simple name="yFile" type="string"><description>file containing the y positions of the measurements</description><value>y.txt</value></simple>
+  <simple name="timeFile" type="string"><description>file containing the timestamps of the data</description><value>t.txt</value></simple>
+  <simple name="maxNumMeas" type="long"><description>the maximum number of measurements</description><value>181</value></simple>
+  <simple name="commaSeparated" type="boolean"><description>comma separated file or not</description><value>0</value></simple>
+  <simple name="conversionFactor" type="double"><description>factor to multiply x an y values</description><value>0.01</value></simple>
+</properties>

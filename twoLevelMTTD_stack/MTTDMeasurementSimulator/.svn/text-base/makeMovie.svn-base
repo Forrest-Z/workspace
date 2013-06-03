@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#ffmpeg -i figures/composed%04d.png -qscale 4 -b 800 -s 1600x600 -r 24 video.mpg
+ffmpeg -i figures/measSim%04d.png -qscale 1 video.mpg
+rm -f figures/*
+

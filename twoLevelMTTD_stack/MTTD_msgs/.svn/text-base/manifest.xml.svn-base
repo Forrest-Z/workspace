@@ -1,0 +1,28 @@
+<package>
+  <description brief="MTTD_msgs">
+
+     MTTD_msgs. This package contains messages (ROS) used in MTTD_interface.
+     These messages are compatible with people stack but at the moment (17th June) people stack
+     is not stable, so I preferred to create another package. In the future, 
+     I think is better use directly people_msgs instead this one.
+     NOTE: EXPERIMENTAL!
+     
+  </description>
+  <author>Enea Scioni</author>
+  <license>LGPL</license>
+  <review status="unstable" notes=""/>
+  <url>http://ros.org/wiki/MTTD_msgs</url>
+  
+  <export>
+    <cpp cflags="-I${prefix}/msg/cpp"/>
+  </export>
+  
+  <depend package="roscpp" />
+  <depend package="geometry_msgs" />
+  <depend package="std_msgs" />
+  
+  
+
+</package>
+
+

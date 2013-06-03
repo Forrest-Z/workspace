@@ -1,0 +1,19 @@
+<launch>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" >
+
+
+<remap from="base_scan" to="robot_0/base_scan" />
+<remap from="cmd_vel" to="robot_0/cmd_vel" />
+
+    <rosparam file="$(find new_project2)/launch/config/footprint.yaml" command="load" />
+
+    <rosparam file="$(find new_project2)/launch/config/costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find new_project2)/launch/config/costmap_common.yaml" command="load" ns="local_costmap" />
+
+    <rosparam file="$(find new_project2)/launch/config/global_costmap.yaml" command="load" />
+    <rosparam file="$(find new_project2)/launch/config/navfn_params.yaml" command="load" />    
+
+    <rosparam file="$(find new_project2)/launch/config/local_costmap.yaml" command="load" />
+    <rosparam file="$(find new_project2)/launch/config/trajectory_planner_params.yaml" command="load" />
+  </node>
+</launch>

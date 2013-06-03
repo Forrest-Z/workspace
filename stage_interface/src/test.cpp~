@@ -1,0 +1,89 @@
+#include "ros/ros.h"
+#include "tf/transform_listener.h"
+#include "tf/message_filter.h"
+#include "message_filters/subscriber.h"
+#include <visualization_msgs/Marker.h>
+#include "geometry_msgs/Point.h"
+#include <math.h>
+#include <fstream>
+#include <nav_msgs/Odometry.h>
+#include "geometry_msgs/Twist.h"
+#include <dwa_local_planner_moving_obs/OdometryMovingObstacles.h>
+using namespace std;
+using namespace ros;
+using namespace tf;
+#define ODOM "base_pose_ground_truth"
+#define CMD_VEL "cmd_vel"
+const int numberOfPeople=2;
+ofstream outfile;
+
+class OdometryMovingObs
+{
+public:
+std::vector<ros::Subscriber> odom_subs_;
+dwa_local_planner_moving_obs::OdometryMovingObstacles obstacle_pos_vel_;
+std::vector<ros::Publisher> cmd_vel_pubs_;
+std::vector<geometry_msgs::Twist> initial_vels;
+ros::Publisher odometry_pub_;
+ros::NodeHandle n_;
+
+OdometryMovingObs(ros::NodeHandle nh);
+void odomReceived(int idx, const boost::shared_ptr<nav_msgs::Odometry const>& msg);
+const char * mapName(const char *name, size_t robotID);
+void initialize_velocities();
+};
+
+void OdometryMovingObs::initialize_velocities(){
+  geometry_msgs::Twist vel;
+  vel.linear.x=.2;vel.linear.y=0;vel.linear.z=0;
+  vel.angular.x=0;vel.angular.y=0;vel.angular.z=0;
+  obstacle_pos_vel_.number_of_obstacles=numberOfPeople;
+  initial_vels.push_back(vel);
+  initial_vels.push_back(vel);
+}
+
+OdometryMovingObs::OdometryMovingObs(ros::NodeHandle nh):
+ n_(nh)
+{
+OdometryMovingObs::initialize_velocities();
+ for (int r=1;r<=numberOfPeople;r++){
+    odom_subs_.push_back(n_.subscribe<nav_msgs::Odometry>(mapName(ODOM,r), 10, boost::bind(&OdometryMovingObs::odomReceived, this, r, _1)));
+cmd_vel_pubs_.push_back(n_.advertise<geometry_msgs::Twist>(mapName(CMD_VEL,r), 10));
+cmd_vel_pubs_[r-1].publish(initial_vels[r-1]);
+odometry_pub_= n_.advertise<dwa_local_planner_moving_obs::OdometryMovingObstacles>("OdometryMovingObtacles",10) ;
+  }
+}
+
+const char * OdometryMovingObs::mapName(const char *name, size_t robotID)
+{
+  static char buf[100];
+  snprintf(buf, sizeof(buf), "/robot_%u/%s", (unsigned int)robotID, name);
+  return buf;
+}
+
+void OdometryMovingObs::odomReceived(int idx, const boost::shared_ptr<nav_msgs::Odometry const>& msg)
+{
+if(obstacle_pos_vel_.odom.size()+1>idx)
+obstacle_pos_vel_.odom[idx-1]=(*msg);
+else
+obstacle_pos_vel_.odom.push_back(*msg);
+outfile<<idx<<' '<<(obstacle_pos_vel_.odom[idx-1]).pose.pose.position.x<<' '<<(obstacle_pos_vel_.odom[idx-1]).pose.pose.position.y<<' '<<(obstacle_pos_vel_.odom[idx-1]).twist.twist.linear.x<<'\n';
+//Adding vel info (Stage does not seem to publish this) (converting axis x=y and y=-x)
+obstacle_pos_vel_.odom[idx-1].twist.twist.linear.x=initial_vels[idx-1].linear.y;
+obstacle_pos_vel_.odom[idx-1].twist.twist.linear.y=-initial_vels[idx-1].linear.x;
+//publish new_vel for StageROS
+cmd_vel_pubs_[idx-1].publish( initial_vels[idx-1] );
+//publish all moving obstacles' odometry for move_base
+if (idx==1) odometry_pub_.publish(obstacle_pos_vel_);
+}
+
+int main(int argc, char **argv)
+{  
+  outfile.open("/home/sid/testoutput.txt");
+  ros::init(argc, argv,"main_test");
+  ros::NodeHandle nh;
+  OdometryMovingObs tg(nh);
+  ros::spin();
+  outfile.close();
+  return 0;
+}

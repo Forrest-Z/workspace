@@ -1,0 +1,23 @@
+<package>
+  <description brief="RBBM">
+
+     RBBM is a ROS package implementing the Rigorously Bayesian Beam Model
+
+  </description>
+  <author>Tinne De Laet</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://people.mech.kuleuven.be/~tdelaet/RBBM/index.html</url>
+
+  <depend package="bfl_dataAssociationBranch" />
+  <!--
+  <depend package="bfl_0.7" />
+   -->
+  <export>
+        <rosdoc config="rosdoc.yaml" />
+        <cpp cflags="-I${prefix}/src" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lRBBM"/>
+  </export>
+
+</package>
+
+

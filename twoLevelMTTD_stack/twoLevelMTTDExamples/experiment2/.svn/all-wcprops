@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2
+END
+scanyscale.btf
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/scanyscale.btf
+END
+reporterEstimationGaussianGit.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/reporterEstimationGaussianGit.cpf
+END
+plotResults.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/plotResults.py
+END
+twoLevelMTTDGitDataPeople.xml.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/twoLevelMTTDGitDataPeople.xml.xacro
+END
+runTwoLevelMTTDGitData
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/runTwoLevelMTTDGitData
+END
+timestamp.btf
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/timestamp.btf
+END
+scanxscale.btf
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/scanxscale.btf
+END

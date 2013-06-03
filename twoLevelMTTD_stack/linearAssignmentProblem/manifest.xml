@@ -1,0 +1,19 @@
+<package>
+  <description brief="linearAssignmentProblem">
+
+    Test for solving 2d assignmentproblem 
+
+  </description>
+  <author>Tinne De Laet</author>
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/linearAssignmentProblem</url>
+  <export>
+    <cpp cflags="-I${prefix}/src" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -llinearAssignmentProblem.so"/>
+
+    <doxymaker external="http://othello.informatik.uni-freiburg.de/~luber/html/people_tracker/doxygen/html/index.html" /> 
+  </export>
+  <depend package="srl_people_tracker_0.2" />
+</package>
+
+

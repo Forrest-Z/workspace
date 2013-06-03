@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/orocos/!svn/ver/33450/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_interface/src
+END
+read_people.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/orocos/!svn/ver/33398/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_interface/src/read_people.cpp
+END
+OrocosData.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/orocos/!svn/ver/33398/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_interface/src/OrocosData.hpp
+END
+laserdata.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/orocos/!svn/ver/33397/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_interface/src/laserdata.hpp
+END
+MTTD_input.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/orocos/!svn/ver/33450/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_interface/src/MTTD_input.cpp
+END
+MTTD_output.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/orocos/!svn/ver/33450/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_interface/src/MTTD_output.cpp
+END
+int_oro.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/orocos/!svn/ver/33397/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_interface/src/int_oro.cpp
+END

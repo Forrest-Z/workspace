@@ -1,0 +1,23 @@
+<package>
+  <description brief="srl_people_tracker_0.2">
+
+     srl_people_tracker_0.2
+
+  </description>
+  <author>Matthias Luber (Social Robotics Laboratory, Albert-Ludwigs-University
+of Freiburg, Germany), Kai O. Arras (Social Robotics Laboratory,
+Albert-Ludwigs-University of Freiburg, Germany), and Tinne De Laet
+(K.U.Leuven, Belgium)(package) </author>
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://othello.informatik.uni-freiburg.de/~luber/html/people_tracker/people_tracker.html</url>
+  <export>
+    <cpp cflags="-I${prefix}/build/srl_source" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lcommunication -llap -lmht -lparameters -lsensor -ltrackerbase "/>
+
+    <doxymaker external="http://othello.informatik.uni-freiburg.de/~luber/html/people_tracker/doxygen/html/index.html" /> 
+  </export>
+  <depend package="eigen"/>
+
+</package>
+
+

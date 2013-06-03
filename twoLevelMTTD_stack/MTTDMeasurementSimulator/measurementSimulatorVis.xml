@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+<simple name="Import" type="string"><value>/home/fiep/orocos/install/boost38/lib/libMEASSIM-gnulinux</value></simple>
+<simple name="Import" type="string"><value>/home/fiep/orocos/install/boost38/lib/liborocos-reporting-gnulinux.so</value></simple>
+<simple name="Import" type="string"><value>/home/fiep/orocos/install/boost38/lib/libVISMEASSIM_PREPROC-gnulinux.so</value></simple>
+<simple name="Import" type="string"><value>/home/fiep/orocos/install/boost38/lib/rtt/gnulinux/plugins/liborocos-bfl_toolkit-gnulinux.so</value></simple>
+
+<struct name="MEASSIM" type="OCL::MeasurementSimulator">
+  <struct name="Activity" type="PeriodicActivity">
+    <simple name="Period" type="double"><value>0.1</value></simple> 
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>0</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>1</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/measurementSimulator.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>Reporter</value></simple>
+    <simple type="string"><value>VIS_MEASSIMPREPROC</value></simple>
+  </struct>
+  <struct name="Ports" type="PropertyBag">
+      <simple name="numObjects" type="string"><value>numComp</value></simple>
+      <simple name="stateObjects" type="string"><value>compMeans</value></simple>
+  </struct>
+</struct>
+
+<struct name="Reporter" type="OCL::FileReporting">
+  <struct name="Activity" type="NonPeriodicActivity">
+    <!--<simple name="Period" type="double"><value>10</value></simple>  -->
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="LoadProperties" type="string"><value>cpf/reporting.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+     <simple name="Peer" type="string"><value>MEASSIM</value></simple>
+  </struct>
+</struct>
+
+<struct name="VIS_MEASSIMPREPROC" type="OCL::VIS_MEASSIMPREPROC">
+  <simple name="Server" type="boolean"><value>1</value></simple>
+  <simple name="UseNamingService" type="boolean"><value>0</value></simple>
+  <struct name="Activity" type="PeriodicActivity">
+    <simple name="Period" type="double"><value>0.1</value></simple> 
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>0</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/visMeasSimPreproc.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>MEASSIM</value></simple>
+    <simple type="string"><value>Reporter</value></simple>
+  </struct>
+  <struct name="Ports" type="PropertyBag">
+      <simple name="numComp" type="string"><value>numComp</value></simple>
+      <simple name="compMeans" type="string"><value>compMeans</value></simple>
+  </struct>
+</struct>
+
+</properties>

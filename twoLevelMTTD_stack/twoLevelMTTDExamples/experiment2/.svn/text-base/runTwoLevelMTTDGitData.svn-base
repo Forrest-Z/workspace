@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DEPLXML="twoLevelMTTDGitDataPeople.xml"
+rosrun xacro xacro.py $DEPLXML.xacro > $DEPLXML 
+
+rosrun ocl_1.10 deployer-gnulinux -s $DEPLXML 

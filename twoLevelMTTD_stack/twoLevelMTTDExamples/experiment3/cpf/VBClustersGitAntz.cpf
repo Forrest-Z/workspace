@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<!-- Properties of the SeperateObjects component -->
+<properties>
+   <simple name="dimension" type="long"><description>The dimension of the space in which VBI is done.</description><value>2</value></simple>
+   <simple name="treshold_new_cluster" type="double"><description>The treshold of the association probability from wich a new cluster is created.</description><value>2e-1</value></simple>
+   <simple name="treshold_effective_cluster" type="double"><description>The treshold for the effective number of measurements from which a cluster is effective.</description><value>6.05</value></simple>
+   <simple name="max_iter" type="long"><description>The maximum number of iterations.</description><value>20</value></simple>
+   <simple name="max_iterFirst" type="long"><description>The maximum number of iterations for first time.</description><value>150</value></simple>
+   <simple name="maxNumberClusters" type="long"><description>The maximum number of clusters.</description><value>40</value></simple>
+   <simple name="maxNumberComponents" type="long"><description>The maximum number of components (allocation).</description><value>181</value></simple>
+   <simple name="maxNumberMeasurements" type="long"><description>The maximum number of measurements (memory allocation).</description><value>361</value></simple>
+   <simple name="betaPrior" type="double"><description>The beta parameter for VB clusters</description><value>0.05</value></simple>
+   <simple name="nuPrior" type="double"><description>The nu parameter for VB clusters</description><value>1.0</value></simple>
+   <simple name="alphaPrior" type="double"><description>The alpha parameter for VB clusters</description><value>1.00</value></simple>
+   <simple name="WPrior" type="double"><description>The W parameter for VB clusters</description><value>90</value></simple>
+   <simple name="SigmaPrior" type="double"><description>The Sigma parameter for VB clusters</description><value>1.00</value></simple>
+   <simple name="betaNewCluster" type="double"><description>The beta parameter for VB clusters</description><value>0.05</value></simple>
+   <simple name="nuNewCluster" type="double"><description>The nu parameter for VB clusters</description><value>1.00</value></simple>
+   <simple name="alphaNewCluster" type="double"><description>The alpha parameter for VB clusters</description><value>10.0</value></simple>
+   <simple name="WNewCluster" type="double"><description>The W parameter for VB clusters</description><value>90</value></simple>
+   <simple name="SigmaNewCluster" type="double"><description>The Sigma parameter for VB clusters</description><value>1.00</value></simple>
+</properties>

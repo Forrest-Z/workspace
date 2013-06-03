@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/orocos/!svn/ver/33408/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3
+END
+t.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3/t.txt
+END
+calculateEllipses.py
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3/calculateEllipses.py
+END
+x.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3/x.txt
+END
+y.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3/y.txt
+END
+plotResults.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3/plotResults.py
+END
+twoLevelMTTDGitDataAnts.xml.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/repos/orocos/!svn/ver/33408/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3/twoLevelMTTDGitDataAnts.xml.xacro
+END
+runTwoLevelMTTDGitData
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/orocos/!svn/ver/33405/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment3/runTwoLevelMTTDGitData
+END

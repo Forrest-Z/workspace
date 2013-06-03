@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/orocos/!svn/ver/33387/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/srl_people_tracker_0.2
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/orocos/!svn/ver/33387/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/srl_people_tracker_0.2/manifest.xml
+END
+CMakeLists.patch
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/orocos/!svn/ver/33387/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/srl_people_tracker_0.2/CMakeLists.patch
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/orocos/!svn/ver/33387/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/srl_people_tracker_0.2/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/orocos/!svn/ver/33387/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/srl_people_tracker_0.2/Makefile
+END

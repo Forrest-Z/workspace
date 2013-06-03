@@ -1,0 +1,19 @@
+<package>
+  <description brief="background">
+
+     background
+
+  </description>
+  <author>Enea Scioni</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/background</url>
+  <depend package="roscpp" />
+  <depend package="nav_msgs" />
+  <depend package="sensor_msgs" />
+  <depend package="map_server" />
+  <depend package="laser_geometry"/>
+
+</package>
+
+

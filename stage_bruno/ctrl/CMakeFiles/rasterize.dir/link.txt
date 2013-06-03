@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -O2 -DNDEBUG -Wall     -shared -Wl,-soname,rasterize.so -o rasterize.so CMakeFiles/rasterize.dir/rasterize.o ../../libstage/libstage.so.4.0.0 -lGLU -lGL -lSM -lICE -lX11 -lXext -lltdl -Wl,-rpath,/home/bruno/Newstage/Stage-4.0.0-src/libstage: 

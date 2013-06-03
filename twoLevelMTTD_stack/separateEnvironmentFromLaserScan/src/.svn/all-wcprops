@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/src
+END
+SeparateObjects.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/src/SeparateObjects.cpp
+END
+testSeperateObjects.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/src/testSeperateObjects.cpp
+END
+SeparateObjects.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/src/SeparateObjects.hpp
+END
+separatorTester.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/src/separatorTester.cpp
+END
+separatorTester.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/src/separatorTester.hpp
+END

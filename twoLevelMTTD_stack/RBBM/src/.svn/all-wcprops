@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/orocos/!svn/ver/33401/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src
+END
+RBBM_radius.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBM_radius.h
+END
+poccl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/poccl.cpp
+END
+testMeasModelCartesian.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/orocos/!svn/ver/33401/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/testMeasModelCartesian.cpp
+END
+environment.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/environment.txt
+END
+phit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/phit.cpp
+END
+poccl.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/poccl.h
+END
+testMeasModel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/orocos/!svn/ver/33401/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/testMeasModel.cpp
+END
+testMeasModelCartesian_radius.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/orocos/!svn/ver/33401/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/testMeasModelCartesian_radius.cpp
+END
+phit.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/phit.h
+END
+RBBMCartesian.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBMCartesian.cpp
+END
+testRBBM181.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/orocos/!svn/ver/33401/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/testRBBM181.cpp
+END
+RBBMCartesian.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBMCartesian.h
+END
+RBBM.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBM.cpp
+END
+RBBMCartesian_radius.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBMCartesian_radius.cpp
+END
+RBBM.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBM.h
+END
+RBBMCartesian_radius.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBMCartesian_radius.h
+END
+RBBM1Beam.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBM1Beam.cpp
+END
+RBBM_radius.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBM_radius.cpp
+END
+test1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/test1.txt
+END
+RBBM1Beam.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/orocos/!svn/ver/33388/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/RBBM/src/RBBM1Beam.h
+END

@@ -1,0 +1,13 @@
+<stack>
+  <description brief="twoLevelMTTD_stack">
+
+Stack for the tracking and detection of multiple targets using the twoLevelMTTD algorithm
+
+</description>
+  <author>Maintained by Tinne De Laet</author>
+  <license>LGPL</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/twoLevelMTTD_stack</url>
+  <depend stack="ros" />
+
+</stack>

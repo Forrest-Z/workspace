@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- machine name="rubens" address="pma-robot-rubens" ros-root="$(env ROS_ROOT)" ros-package-path="$(env HOME):$(env ROS_PACKAGE_PATH)" default="true" /-->
+
+
+  <node name="MTTDInterface" pkg="orocos_ros_integration" type="rosdeployer" args="--start $(find MTTD_interface)/MTTD_interface.xml" output="screen"  respawn="false"/>
+  
+</launch>

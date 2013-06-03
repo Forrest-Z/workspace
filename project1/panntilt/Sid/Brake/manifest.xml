@@ -1,0 +1,24 @@
+<package>
+  <description brief="Brake">
+
+     Brake
+
+  </description>
+  <author>Charanpreet</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/Brake</url>
+  <depend package="roscpp"/>
+  <depend package="geometry_msgs"/>
+  <depend package="nav_msgs"/>
+  <depend package="tf"/>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="actionlib"/>
+  <depend package="ptu_control"/>
+  <depend package="sensor_msgs"/>
+  <depend package="laser_assembler"/>
+
+</package>
+
+

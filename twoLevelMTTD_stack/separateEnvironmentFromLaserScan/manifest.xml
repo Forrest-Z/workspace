@@ -1,0 +1,21 @@
+<package>
+  <description brief="separateEnvironmentFromLaserScan">
+
+     separateEnvironmentFromLaserScan
+
+  </description>
+  <author>Tinne De Laet</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/separateEnvironmentFromLaserScan</url>
+
+  <depend package="rtt_1.10" />
+  <depend package="ocl_1.10" />
+  <depend package="bfl_dataAssociationBranch" />
+  <export>
+        <rosdoc config="rosdoc.yaml" />
+  </export>
+
+</package>
+
+

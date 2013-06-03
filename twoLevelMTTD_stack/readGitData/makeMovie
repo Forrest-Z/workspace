@@ -1,0 +1,2 @@
+ffmpeg -i figures/measurementsGIT%04d.png -qscale 1 video.mpg
+rm -rf figures/*

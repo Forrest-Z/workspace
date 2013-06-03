@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 29
+build
+.build_version
+bin
+lib
+
+K 13
+svn:mergeinfo
+V 314
+/branches/arm_planning_branch/nav/people_aware_nav:27259-27893
+/pkg/branches/gazebo-branch-merge/nav/people_aware_nav:15683-15684,15739-15794,15797-15820,15822-15839,15852-15870,15983-16008,16010-16016,16129-16141,16145-16169,16245-16262,16274-16334
+/tags/controller_manager_rename/nav/people_aware_nav:25336-25352
+END

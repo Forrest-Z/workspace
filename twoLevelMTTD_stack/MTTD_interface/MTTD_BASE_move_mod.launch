@@ -1,0 +1,15 @@
+<launch>
+<include file="$(find MTTD_interface)/real_env_move_mod.launch" />
+
+ <!-- machine name="rubens" address="pma-robot-rubens" ros-root="$(env ROS_ROOT)" ros-package-path="$(env HOME):$(env ROS_PACKAGE_PATH)" default="true" / -->
+
+   <node name="background_subtraction" pkg="background" type="background" respawn="true" output="screen" > <!-- machine="rubens" -->
+    <remap from="pointcloud_out" to="/MTTDI1/object_point_cloud" />
+    <remap from="map" to="map_tilt"/>
+    <remap from="base_scan" to="tilt_scan"/>
+  </node>
+
+  <node name="visualize_cloud" pkg="visualize" type="visualize" respawn="false" />
+
+
+</launch>

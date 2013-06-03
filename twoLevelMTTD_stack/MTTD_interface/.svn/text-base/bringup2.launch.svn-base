@@ -1,0 +1,5 @@
+<launch>
+<machine name="rubens" address="pma-robot-rubens" ros-root="$(env ROS_ROOT)" ros-package-path="$(env HOME):$(env ROS_PACKAGE_PATH)" default="true" />
+
+  <node name="simple" pkg="simplelinearproblem" type="test_MTTD_marker" respawn="false" output="screen" />
+</launch>

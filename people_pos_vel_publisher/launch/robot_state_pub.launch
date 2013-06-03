@@ -1,0 +1,6 @@
+<launch>
+        <param name="robot_description" command="cat $(find project2)/powerbot_sr4k_hokuyo.xml" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node pkg="tf" type="static_transform_publisher" name="odom_static" args="0 0 0 0 0 0 /odom /odom_combined 25" />        
+
+</launch>

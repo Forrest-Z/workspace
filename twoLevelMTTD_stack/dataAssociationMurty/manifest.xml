@@ -1,0 +1,20 @@
+<package>
+  <description brief="dataAssociationMurty">
+
+     dataAssociationMurty
+
+  </description>
+  <author>Tinne De Laet</author>
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dataAssociationMurty</url>
+  <export>
+    <cpp cflags="-I${prefix}/src" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -ldataAssociationMurty"/>
+  </export>
+  <depend package="srl_people_tracker_0.2" />
+  <depend package="linearAssignmentProblem" />
+  <depend package="bfl_dataAssociationBranch" />
+
+</package>
+
+

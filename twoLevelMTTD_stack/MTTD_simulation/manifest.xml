@@ -1,0 +1,25 @@
+<package>
+  <description brief="MTTD_simulation">
+
+     This package contains configuration files to simulate twoLevelMTTD algorithm using stageros.
+     
+
+  </description>
+  <author>Enea Scioni enea.scioni@student.unife.it, Tinne De Laet Tinne.DeLaet@mech.kuleuven.be</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/MTTD_simulation</url>
+  <depend package="roscpp"/>
+  <depend package="nav_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="move_base_msgs"/>
+  <depend package="actionlib"/>
+  <depend package="amcl"/>
+  <depend package="move_base"/>
+  <depend package="stage" />
+  <depend package="rviz" />
+  <depend package="tf" />  
+
+</package>
+
+

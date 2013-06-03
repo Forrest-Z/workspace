@@ -1,0 +1,3 @@
+explore_planner:
+  default_tolerance: 2.0
+  allow_unknown: false

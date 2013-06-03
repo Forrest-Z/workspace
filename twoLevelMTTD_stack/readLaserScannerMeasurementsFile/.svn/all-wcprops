@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/orocos/!svn/ver/33403/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile
+END
+reader.svg
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/reader.svg
+END
+readLaserScannerMeasurementsFile.xml
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/readLaserScannerMeasurementsFile.xml
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/orocos/!svn/ver/33403/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/mainpage.dox
+END
+rosdoc.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/orocos/!svn/ver/33403/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/rosdoc.yaml
+END
+ReadMeasurementsFile.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/ReadMeasurementsFile.cpf
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/Makefile
+END

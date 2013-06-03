@@ -1,0 +1,52 @@
+10
+
+dir
+54802
+https://code.ros.org/svn/wg-ros-pkg/branches/trunk_cturtle/stacks/people_experimental/people_aware_nav
+https://code.ros.org/svn/wg-ros-pkg
+
+
+
+2010-07-01T21:38:21.140635Z
+40196
+pantofaru
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+7275ad9f-c29b-430a-bdc5-66f4b3af1622
+
+test
+dir
+
+include
+dir
+
+msg
+dir
+
+src
+dir
+
+robots
+dir
+
+launch
+dir
+
+srv
+dir
+
+asdf
+dir
+

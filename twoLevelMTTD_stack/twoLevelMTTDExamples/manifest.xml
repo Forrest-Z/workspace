@@ -1,0 +1,22 @@
+<package>
+  <description brief="twoLevelMTTDExamples">
+
+     twoLevelMTTDExamples
+
+  </description>
+  <author>Tinne De Laet</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/twoLevelMTTDExamples</url>
+  <depend package="twoLevelMTTD" />
+  <depend package="readGitData" />
+  <depend package="readLaserScannerMeasurementsFile" />
+  <depend package="separateEnvironmentFromLaserScan" />
+  <depend package="MTTDMeasurementSimulator" />
+
+  <depend package="ocl_1.10" />
+  <depend package="bfl_dataAssociationBranch" />
+
+</package>
+
+

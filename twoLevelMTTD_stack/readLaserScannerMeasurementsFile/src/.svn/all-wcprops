@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/src
+END
+ReadMeasurementsFile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/src/ReadMeasurementsFile.cpp
+END
+ReadMeasurementsFile.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/orocos/!svn/ver/33402/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/readLaserScannerMeasurementsFile/src/ReadMeasurementsFile.hpp
+END

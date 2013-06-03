@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/sandbox/teleop_base/src
+END
+teleop_base_keyboard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/sandbox/teleop_base/src/teleop_base_keyboard.cpp
+END
+teleop_base_pedals
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/sandbox/teleop_base/src/teleop_base_pedals
+END

@@ -1,0 +1,148 @@
+size [30 30]
+
+
+define circle model
+(
+  gui_nose 0
+  laser_return 1
+)
+
+define topurg laser
+(
+  range_min 0.0
+  range_max 30.0
+  fov 360 #160
+  samples  360 #1081 #180 #1081
+  # generic model properties
+  color "black"
+  size [ 0.05 0.05 0.1 ]
+)
+
+define pr2 position
+(
+  size3 [0.65 0.65 0.25]
+  origin3 [-0.05 0 0 0]
+  gui_nose 1
+  drive "diff"
+  topurg(pose [0.275 0.000 0.000])
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+  gui_movemask 0
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+
+interval_sim 100  # simulation timestep in milliseconds
+interval_real 100  # real-time interval between simulation updates in milliseconds 
+
+window
+( 
+ # size [ 745.000 448.000 ]
+  size [ 640.000 480.000 ]  
+ # center [-684.010 1350.960] 
+  center [15 15] 
+  rotate [ 0.000 0.000 ]
+  # scale 28.806 
+    scale 8
+)
+
+# load an environment bitmap
+floorplan
+( 
+  name "autolab"
+  bitmap "/home/tdelaet/maps/cut_tilt.pgm"
+ # size3 [58.4 52.6 0.5]
+# dimensione della mappa (in metri)
+  size3 [36 31.5 0.5]
+  pose [-15.75  -18.0 0]
+)
+
+# throw in a robot
+pr2( pose [-18.45 -14.37 0] name "robot" color "blue")
+
+
+circle
+( 
+  name "person1"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-38 3 0]
+)
+circle
+( 
+  name "person2"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-38 1 0]
+)
+circle
+( 
+  name "person3"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-38 -1 0]
+)
+circle
+( 
+  name "person4"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-38 -3 0]
+)
+circle
+( 
+  name "person5"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-38 -5 0]
+)
+circle
+( 
+  name "person6"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-31 2 0]
+)
+circle
+( 
+  name "person7"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-31 0 0]
+)
+circle
+( 
+  name "person8"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-31 -2 0]
+)
+circle
+( 
+  name "person9"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-31 -4 0]
+)
+circle
+( 
+  name "person10"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 1.8]
+  pose [-31 -6 0]
+)

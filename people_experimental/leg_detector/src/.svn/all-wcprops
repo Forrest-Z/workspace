@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/leg_detector/src
+END
+leg_detector.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/leg_detector/src/leg_detector.cpp
+END
+laser_processor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/leg_detector/src/laser_processor.cpp
+END
+calc_leg_features.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/leg_detector/src/calc_leg_features.cpp
+END
+laser_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/leg_detector/src/laser_processor.h
+END
+calc_leg_features.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/leg_detector/src/calc_leg_features.h
+END
+train_leg_detector.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/leg_detector/src/train_leg_detector.cpp
+END

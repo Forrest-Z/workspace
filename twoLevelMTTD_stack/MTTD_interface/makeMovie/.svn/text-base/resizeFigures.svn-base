@@ -1,0 +1,28 @@
+#!/bin/bash
+for i in $( ls figures/moved*.png); do
+    #newname=`echo $i|sed 's/\.png$//g'`
+    #newname="$newname Small.png"
+    echo $i
+    number=`echo $i|sed 's/\.png$//g'`
+    number=`echo $number|sed 's/figures\/moved//g'`
+    number=`expr $number + 0`
+    echo $number
+    if [ `expr $number` -lt 10 ]
+    then
+        newname="figures/resized000$number.png"
+    else
+        if [ `expr $number` -lt 100 ]
+        then
+            newname="figures/resized00$number.png"
+        else
+            if [ `expr $number` -lt 1000 ]
+            then
+                newname="figures/resized0$number.png"
+            else
+                newname="figures/resized$number.png"
+            fi
+        fi
+    fi
+    echo $newname
+    convert $i -resize 1625x612 -density 300 $newname
+done

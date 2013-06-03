@@ -1,0 +1,32 @@
+#!/bin/bash
+mkdir -p figures
+#offset = 150
+offset = 150
+for i in $( ls ../figures/estimation*.png); do
+    #newname=`echo $i|sed 's/\.png$//g'`
+    #newname="$newname Small.png"
+    echo $i
+    number=`echo $i|sed 's/\.png$//g'`
+    number=`echo $number|sed 's/..\/figures\/estimation//g'`
+    echo $number
+    newnumber=`expr $number + 0`
+    if [ $newnumber -lt 10 ]
+    then
+        newname="figures/moved000$newnumber.png"
+    else
+        if [ $newnumber -lt 100 ]
+        then
+            newname="figures/moved00$newnumber.png"
+        else
+            if [ $newnumber -lt 1000 ]
+            then
+                newname="figures/moved0$newnumber.png"
+            else
+                newname="figures/moved$newnumber.png"
+            fi
+        fi
+    fi
+    echo $newname
+    cp $i $newname
+done
+

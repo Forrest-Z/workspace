@@ -1,0 +1,5 @@
+ - builder: doxygen
+   name: C++ API
+   output_dir: .
+   file_patterns: '*.c *.cpp *.h *.cc *.hh *.dox *.hpp'
+   homepage: 'http://people.mech.kuleuven.be/~tdelaet/twoLevelMTTD/doc/index.html'

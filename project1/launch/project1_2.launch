@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="project1" type="project1" name="main4"
+	output="screen" respawn="false">
+	
+  </node>
+
+
+</launch>

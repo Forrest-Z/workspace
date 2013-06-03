@@ -1,0 +1,20 @@
+<package>
+  <description brief="MTTD_background_subtraction">
+
+     This package is used in MTTD_interface for preprocessing laser measurements.
+     It extracts non-environment measurements.
+
+  </description>
+  <author>Enea Scioni enea.scioni@student.unife.it</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/MTTD_background_subtraction</url>
+  <depend package="roscpp" />
+  <depend package="nav_msgs" />
+  <depend package="sensor_msgs" />
+  <depend package="map_server" />
+  <depend package="laser_geometry"/>
+
+</package>
+
+

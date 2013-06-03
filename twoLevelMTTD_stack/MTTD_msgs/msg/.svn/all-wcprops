@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/orocos/!svn/ver/33444/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_msgs/msg
+END
+PositionMeasurement.msg
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/orocos/!svn/ver/33397/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_msgs/msg/PositionMeasurement.msg
+END
+PeopleCoordinates.msg
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/orocos/!svn/ver/33397/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_msgs/msg/PeopleCoordinates.msg
+END
+People.msg
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/orocos/!svn/ver/33400/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/MTTD_msgs/msg/People.msg
+END

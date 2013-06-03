@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<!-- Properties of the SeperateObjects component -->
+<properties>
+   <simple name="environment_file" type="string"><description>The name of the file which contains the vector of environment measurements.</description><value>cpf/environment.txt</value></simple>
+   <simple name="sigma_environment_detection" type="double"><description>The sigma of the environment probability.</description><value>0.01</value></simple>
+   <simple name="zmax" type="double"><description>The maximum laser distance measurement.</description><value>8</value></simple>
+   <simple name="treshold" type="double"><description>The treshold from which measurement is considered as environment laser distance measurement.</description><value>0.1</value></simple>
+   <simple name="pC1" type="double"><description>The a priori probability of an environment measurement.</description><value>0.5</value></simple>
+   <simple name="nbeams" type="long"><description>The number of beams in the environment measurement.</description><value>181</value></simple>
+</properties>

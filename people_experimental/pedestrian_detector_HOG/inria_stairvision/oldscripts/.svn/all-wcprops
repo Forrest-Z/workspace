@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/oldscripts
+END
+willow_learning_curve.sh
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/oldscripts/willow_learning_curve.sh
+END
+willow_learning_curve_no_depth.sh
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/oldscripts/willow_learning_curve_no_depth.sh
+END
+old_learning_curve.sh
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/oldscripts/old_learning_curve.sh
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/cpf
+END
+readGitData.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/cpf/readGitData.cpf
+END
+PrepareSeparatedMeasurement.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/cpf/PrepareSeparatedMeasurement.cpf
+END
+reporterEstimationGaussianGit.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/cpf/reporterEstimationGaussianGit.cpf
+END
+EstimationGaussianGitPeople.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/cpf/EstimationGaussianGitPeople.cpf
+END
+NumberObjectsEstimatorGitPeople.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/cpf/NumberObjectsEstimatorGitPeople.cpf
+END
+VBClustersGitPeople.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment2/cpf/VBClustersGitPeople.cpf
+END

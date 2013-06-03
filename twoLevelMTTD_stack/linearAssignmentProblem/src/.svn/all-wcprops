@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/orocos/!svn/ver/33386/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/linearAssignmentProblem/src
+END
+linearAssignmentProblem.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/orocos/!svn/ver/33386/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/linearAssignmentProblem/src/linearAssignmentProblem.cpp
+END
+AssignmentProblemTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/orocos/!svn/ver/33386/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/linearAssignmentProblem/src/AssignmentProblemTest.cpp
+END
+linearAssignmentProblem.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/orocos/!svn/ver/33386/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/linearAssignmentProblem/src/linearAssignmentProblem.h
+END

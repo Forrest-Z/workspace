@@ -1,0 +1,8 @@
+#!/bin/sh
+
+DEPLXML="twoLevelMTTDFile.xml"
+rosrun xacro xacro.py $DEPLXML.xacro > $DEPLXML 
+rosrun xacro xacro.py cpf/reporterTimings.cpf.xacro > cpf/reporterTimings.cpf 
+rosrun xacro xacro.py cpf/ReadMeasurementsFile.cpf.xacro > cpf/ReadMeasurementsFile.cpf 
+
+rosrun ocl_1.10 deployer-gnulinux -s $DEPLXML  #-ldebug

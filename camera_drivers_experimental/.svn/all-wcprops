@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ros-pkg/!svn/ver/35666/branches/trunk_cturtle/stacks/camera_drivers_experimental
+END
+stack.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/stack.xml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/Makefile
+END
+rosdep.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ros-pkg/!svn/ver/35666/branches/trunk_cturtle/stacks/camera_drivers_experimental/rosdep.yaml
+END

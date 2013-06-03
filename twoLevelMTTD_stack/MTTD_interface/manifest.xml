@@ -1,0 +1,25 @@
+<package>
+  <description brief="MTTD_interface">
+
+     MTTD_interface. This package is an interface from ROS and twoLevelMTTD stack - algorithm,
+     using a modified version of orocos_ros_integration package.
+     
+  </description>
+  <author>Enea Scioni</author>
+  <license>LGPL</license>
+  <review status="unstable" notes=""/>
+  <url>http://ros.org/wiki/MTTD_interface</url>
+  <depend package="roscpp" />
+  <depend package="std_msgs" />
+  <depend package="orocos_ros_integration" />
+  <depend package="MTTD_msgs" />
+  <depend package="bfl_dataAssociationBranch" />
+  <depend package="twoLevelMTTD" />
+  <depend package="sensor_msgs" />
+  <depend package="ocl_1.10" />
+  <depend package="MTTD_background_subtraction" />
+  <depend package="MTTD_visualize" />
+
+</package>
+
+

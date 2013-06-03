@@ -1,0 +1,26 @@
+compile
+
+g++ `pkg-config opencv --cflags --libs` main2.cpp -o main2
+
+22538
+
+if the bounding box coincide and centroid match merge objects
+
+threshhold should be propotional to object depth
+
+6.4 m -- 161
+
+3.8 m -- 97
+
+4.25m -- 114
+
+2m    -- 50 
+
+
+kinect ----
+
+640x480
+
+Horizontal field of view: 57 degrees. Vertical field of view: 43 degrees
+
+

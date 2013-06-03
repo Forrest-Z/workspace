@@ -1,0 +1,8 @@
+#!/bin/sh
+
+rosrun xacro xacro.py twoLevelMTTDSimulation.xml.xacro > twoLevelMTTDSimulation.xml 
+rosrun xacro xacro.py cpf/reporterTimings.cpf.xacro > cpf/reporterTimings.cpf 
+DEPLXML="twoLevelMTTDSimulation.xml"
+
+rosrun ocl_1.10 deployer-gnulinux -s $DEPLXML #-ldebug
+

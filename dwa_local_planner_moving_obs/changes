@@ -1,0 +1,42 @@
+manifest - 
+export cpp flags
+
+CMakeLists.txt - 
+rosbuild_add_library
+
+blp_plugin.xml - 
+<library path="lib/libdwa_local_planner_moving_obs">
+<class name="dwa_local_planner_moving_obs/DWAPlannerROS" type="dwa_local_planner::DWAPlannerROS"
+
+cfg/DWAPlanner.cfg - cfg/
+PACKAGE='dwa_local_planner_moving_obs'
+
+name of library - dwa_local_planner_moving_obs
+
+
+velocity_iterator -
+namespace - dwa_local_planner_moving_obs
+
+dwa_planner_ros.h -> dwa_planner_moving_obs_ros.h
+#include <dwa_local_planner_moving_obs/dwa_planner_moving_obs.h>
+namespace dwa_local_planner_moving_obs 
+class DWAPlannerMovingObsROS : public nav_core::BaseLocalPlanner {
+DWAPlannerMovingObsROS() : costmap_ros_(NULL), tf_(NULL), initialized_(false) {}
+ boost::shared_ptr<DWAPlannerMovingObs> dp_;
+
+dwa_planner.h -> dwa_planner_moving_obs.h
+#include <dwa_local_planner_moving_obs/velocity_iterator.h>
+                         #include <dwa_local_planner_moving_obs/DWAPlannerMovingObsConfig.h>
+namespace dwa_local_planner_moving_obs {
+class DWAPlannerMovingObs {
+ DWAPlannerMovingObs(std::string name, costmap_2d::Costmap2DROS* costmap_ros);
+  ~DWAPlannerMovingObs() {delete world_model_;}
+void reconfigureCB(DWAPlannerMovingObsConfig &config, uint32_t level);
+dynamic_reconfigure::Server<DWAPlannerMovingObsConfig> dsrv_;
+dwa_local_planner_moving_obs::DWAPlannerMovingObsConfig default_config_;
+
+
+src/dwa_local_planner/cfg/cofig
+
+src/dwa_planner_moving_obs_ros.cpp
+#include <dwa_local_planner_moving_obs/dwa_planner_moving_obs_ros.h>

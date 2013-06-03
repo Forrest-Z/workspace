@@ -1,0 +1,12 @@
+<launch>
+        <node pkg="LMS1xx" type="LMS100" name="sicklms_node" >
+		<param name="host" type="string" value="192.168.0.1" />
+		<param name="frame_id" type="string" value="/lms_link"/>
+		
+	</node>
+
+       <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
+               <rosparam command="load" file="$(find project2)/lms100_laser_config.yaml" />
+               <remap from="scan_filtered" to="base_scan" />
+       </node>
+</launch>

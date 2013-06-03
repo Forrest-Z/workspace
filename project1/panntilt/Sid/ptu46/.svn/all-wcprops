@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/wu-ros-pkg/!svn/ver/37/stacks/rwi/trunk/ptu46
+END
+ptu_action_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/wu-ros-pkg/!svn/ver/37/stacks/rwi/trunk/ptu46/ptu_action_server.py
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/wu-ros-pkg/!svn/ver/37/stacks/rwi/trunk/ptu46/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/wu-ros-pkg/!svn/ver/20/stacks/rwi/trunk/ptu46/mainpage.dox
+END
+ptu46_actions.launch
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/wu-ros-pkg/!svn/ver/37/stacks/rwi/trunk/ptu46/ptu46_actions.launch
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/wu-ros-pkg/!svn/ver/14/stacks/rwi/trunk/ptu46/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/wu-ros-pkg/!svn/ver/14/stacks/rwi/trunk/ptu46/Makefile
+END

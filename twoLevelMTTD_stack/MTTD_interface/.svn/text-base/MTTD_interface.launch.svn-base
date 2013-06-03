@@ -1,0 +1,14 @@
+<launch>
+ <!-- machine name="rubens" address="pma-robot-rubens" ros-root="$(env ROS_ROOT)" ros-package-path="$(env HOME):$(env ROS_PACKAGE_PATH)" default="true" -->
+
+  <include file="$(find MTTD_simulation)/simulation.launch" />
+
+  <node name="MTTDInterface" pkg="orocos_ros_integration" type="rosdeployer" args="--start $(find MTTD_interface)/MTTD_interface.xml" output="screen" />
+
+  <node name="background_subtraction" pkg="MTTD_background_subtraction" type="background" respawn="false" output="screen" >
+    <remap from="pointcloud_out" to="/MTTDI1/object_point_cloud"/>
+  </node>
+
+  <node name="visualize" pkg="MTTD_visualize" type="visualize" respawn="false" />
+  
+</launch>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+   <simple name="measurements_file" type="string"><description>The name of the file which contains the laserdistance measurements.</description><value>$(find twoLevelMTTDExamples)/experiment1/measurementsEXP4.txt</value></simple>
+   <simple name="nbeams" type="long"><description>The number of beams in the environment measurement.</description><value>181</value></simple>
+</properties>

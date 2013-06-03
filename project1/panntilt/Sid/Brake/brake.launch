@@ -1,0 +1,17 @@
+<launch>
+	<node pkg="laser_assembler" type="point_cloud_assembler_srv" name="AssemblerServer" output ="screen">
+		<param name="~fixed_frame" value ="/map"/>
+		<param name="~max_scans" value ="1"/>
+		<remap from="/scan_in" to="/swissranger/pointcloud_raw"/>
+	</node>
+	
+	<!--<include file="$(find ptu46)/ptu46_actions.launch"/>-->
+	
+	<node pkg="Brake" type="brake" name="Brake" output="screen"/>
+	
+	<node pkg="Brake" type="ptuTF" name="ptuTF"/>
+	
+	<node pkg="Brake" type="PCL_Pub" name="PCL_Pub"/>
+	
+	<include file="$(find powerbot_2dnav_sim)/swiss.launch"/>
+</launch>

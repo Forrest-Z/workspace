@@ -1,0 +1,22 @@
+<launch>
+
+  <param name="/use_sim_time" value="true"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="fake_localize" args="0 0 0 0 0 0 odom robot_0/odom 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="fake_localize2" args="0 0 0 0 0 0 robot_0/base_link  base_link 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="fake_localize3" args="0 0 0 0 0 0 robot_0/base_footprint base_footprint 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="fake_localize4" args="0 0 0 0 0 0 robot_0/base_laser_link base_laser_link 10"/>
+<!--<node pkg="tf" type="static_transform_publisher" name="fake_localize5" args="3 3 0 -1.57 0 0 map robot_1/odom 10"/>-->
+
+
+  <node pkg="tf" type="static_transform_publisher" name="fake_localize6" args="0 0 0 0 0 0 map odom 10"/>
+  <node pkg="map_server" type="map_server" name="open_maze" args="$(find new_project_moving_obs)/launch/map_server_map/corridor.yaml"/>
+
+
+  <include file="$(find new_project_moving_obs)/launch/stage.xml" />
+  <include file="$(find new_project_moving_obs)/launch/move.xml" />
+  <include file="$(find new_project_moving_obs)/launch/robot_state_pub.xml" />
+<!--
+  <include file="$(find new_project_moving_obs)/launch/gmapping.xml" />
+-->
+</launch>

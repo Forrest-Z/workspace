@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<!-- Properties of the EstimationGaussian component -->
+<properties>
+   <simple name="reportingNeeded" type="boolean"><description>Reporting needed or not</description><value>1</value></simple>
+   <simple name="prepareMeasurementNeeded" type="boolean"><description>Prepare measurement needed or not</description><value>1</value></simple>
+   <simple name="measDimension" type="long"><description>The dimension of the measurement space.</description><value>2</value></simple>
+   <simple name="treshold" type="double"><description>The treshold of the association probability to take into account the association.</description><value>0.01</value></simple>
+   <simple name="gamma" type="double"><description>The probability of a false alarm</description><value>0.001</value></simple>
+   <simple name="tresholdAddFilter" type="double"><description>the treshold of the probability of a feature given all objects below which a new filter is started.</description><value>0.01</value></simple>
+   <simple name="tresholdDeleteFilter" type="double"><description>the treshold of the determinant of the covariance above which filter is deleted </description><value>115.0</value></simple>
+   <simple name="maxNumberFilters" type="long"><description>the maximum number of filters(reporting).</description><value>20</value></simple>
+   <simple name="maxNumberClusters" type="long"><description>The maximum number of clusters</description><value>20</value></simple>
+   <simple name="maxNumberMeasurements" type="long"><description>The maximum number of measurements</description><value>181</value></simple>
+   <struct name="robotState" type="ColumnVector">
+      <description>The state of the robot expressed in the laserscanner frame.</description>
+      <simple name="1" type="double"><description>1th element of vector</description><value>-0.85</value></simple>
+      <simple name="2" type="double"><description>2th element of vector</description><value>-2.0</value></simple>
+      <simple name="3" type="double"><description>2th element of vector</description><value>+0.0</value></simple>
+      <simple name="4" type="double"><description>2th element of vector</description><value>+0.0</value></simple>
+   </struct>
+   <struct name="priorMean" type="ColumnVector">
+      <description>The mean of the prior.</description>
+      <simple name="1" type="double"><description>1th element of vector</description><value>+0.0</value></simple>
+      <simple name="2" type="double"><description>2th element of vector</description><value>+0.0</value></simple>
+      <simple name="3" type="double"><description>2th element of vector</description><value>+0.0</value></simple>
+      <simple name="4" type="double"><description>2th element of vector</description><value>+0.0</value></simple>
+   </struct>
+  <struct name="priorCovariance" type="ColumnVector">
+     <description>The covariance of the prior</description>
+     <simple name="1" type="double"><description>1th element of vector</description><value>0.09</value></simple>
+     <simple name="2" type="double"><description>2th element of vector</description><value>0.09</value></simple>
+     <simple name="3" type="double"><description>3th element of vector</description><value>0.09</value></simple>
+     <simple name="4" type="double"><description>4th element of vector</description><value>0.09</value></simple>
+  </struct>
+  <simple name="level" type="long"><description>the level of continuity of the system model: 0 = cte position, 1= cte velocity ,... </description><value>1</value></simple>
+  <simple name="sysNoiseMeanValue" type="double"><description>The mean of the noise on the system model</description><value>0</value></simple>
+  <simple name="sysNoiseCovarianceValue" type="double"><description>The covariance of the noise of the system model</description><value>0.5</value></simple>
+   <struct name="measNoiseMean" type="ColumnVector">
+      <description>The mean of the noise on the measurement model.</description>
+      <simple name="1" type="double"><description>1th element of vector</description><value>+0.0</value></simple>
+      <simple name="2" type="double"><description>2th element of vector</description><value>+0.0</value></simple>
+   </struct>
+   <struct name="measNoiseCovariance" type="SymmetricMatrix">
+     <description>the covariance matrix of the noise on the measurement model</description>
+      <struct name="1" type="RowVector">
+         <description>1th row of matrix</description>
+         <simple name="1" type="double"><description>1th element of vector</description><value>0.04</value></simple>
+         <simple name="2" type="double"><description>2th element of vector</description><value>0</value></simple>
+      </struct>
+      <struct name="2" type="RowVector">
+         <description>2th row of matrix</description>
+         <simple name="1" type="double"><description>1th element of vector</description><value>0</value></simple>
+         <simple name="2" type="double"><description>2th element of vector</description><value>0.04</value></simple>
+      </struct>
+   </struct>
+   <struct name="measModelMatrix" type="Matrix">
+     <description>the linear measurement model matrix </description>
+      <struct name="1" type="RowVector">
+         <description>1th row of matrix</description>
+         <simple name="1" type="double"><description>1th element ofvector</description><value>1.0</value></simple>
+         <simple name="2" type="double"><description>2th element of vector</description><value>0</value></simple>
+         <simple name="3" type="double"><description>3th element of vector</description><value>0.0</value></simple>
+         <simple name="4" type="double"><description>4th element of vector</description><value>0</value></simple>
+      </struct>
+      <struct name="2" type="RowVector">
+         <description>2th row of matrix</description>
+         <simple name="1" type="double"><description>1th element of vector</description><value>0</value></simple>
+         <simple name="2" type="double"><description>2th element of vector</description><value>1.0</value></simple>
+         <simple name="3" type="double"><description>3th element of vector</description><value>0</value></simple>
+         <simple name="4" type="double"><description>4th element of vector</description><value>0.0</value></simple>
+      </struct>
+   </struct>
+  <simple name="numPriorFilters" type="long"><description>The number of prior filters to start the dataAssociation with</description><value>0</value></simple>
+  <struct name="priorMeanFilters" type="ColumnVectors">
+     <description>The mean of the priors to start the dataAssociation with</description>
+  </struct>
+  <struct name="priorCovarianceFilters" type="ColumnVectors">
+     <description>The covariance of the priors to start the dataAssociation with</description>
+  </struct>
+  <simple name="onlyUseCentroidMeasurements" type="boolean"><description>only use centroid measurements or not</description><value>1</value></simple>
+  <simple name="radiusTargets" type="double"><description>The radius of the targets</description><value>0.17</value></simple>
+</properties>

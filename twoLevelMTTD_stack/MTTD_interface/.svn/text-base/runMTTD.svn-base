@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DEPLXML="MTTD_interface.xml"
+LAUNCH="MTTD_interfaceLocal.launch"
+
+rosrun xacro xacro.py $DEPLXML.xacro > $DEPLXML
+rosrun xacro xacro.py cpf/reporterEstimationGaussian.cpf.xacro > cpf/reporterEstimationGaussian.cpf
+rosrun xacro xacro.py cpf/reporterTimings.cpf.xacro > cpf/reporterTimings.cpf
+
+roslaunch $LAUNCH
+#rosrun orocos_ros_integration rosdeployer -s $DEPLXML -ldebug
+#rosrun ocl_1.10 deployer-gnulinux -s $DEPLXML --path=$DEPLOYER_BASE -ldebug

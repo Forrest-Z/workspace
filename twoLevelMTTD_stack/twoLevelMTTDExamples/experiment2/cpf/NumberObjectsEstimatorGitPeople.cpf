@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+  <simple name="maxNumberClusters" type="long"><description>The maximum number of clusters.</description><value>20</value></simple>
+  <simple name="maxNumberObjects" type="long"><description>The maximum number of objects.</description><value>20</value></simple>
+<!--
+  <simple name="probSysOneObjectLess" type="double"><description>The system model probability that the number of obects decreases with one </description><value>2e-11</value></simple>
+  <simple name="probSysOneObjectMore" type="double"><description>The system model probability that the number of obects increases with one </description><value>1e-05</value></simple>
+-->
+  <simple name="probSysOneObjectLess" type="double"><description>The system model probability that the number of obects decreases with one </description><value>2e-16</value></simple>
+  <simple name="probSysOneObjectMore" type="double"><description>The system model probability that the number of obects increases with one </description><value>1e-10</value></simple>
+  <simple name="probSysTwoObjectsLess" type="double"><description>The system model probability that the number of obects decreases with two </description><value>0.0</value></simple>
+  <simple name="probSysTwoObjectsMore" type="double"><description>The system model probability that the number of obects increases with two </description><value>0.0</value></simple>
+</properties>

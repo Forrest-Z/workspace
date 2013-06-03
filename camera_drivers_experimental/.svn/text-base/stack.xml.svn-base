@@ -1,0 +1,10 @@
+<stack>
+  <description brief="camera_drivers_experimental">camera_drivers_experimental</description>
+  <author>Maintained by Blaise Gassend</author>
+  <license>GPL,BSD,LGPL</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/camera_drivers_experimental</url>
+  <depend stack="image_common" /> <!-- image_transport -->
+  <depend stack="ros" />
+
+</stack>

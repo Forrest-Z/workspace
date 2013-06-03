@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+<simple name="Import" type="string"><value>lib/libreadGitData.so</value></simple>
+<simple name="Import" type="string"><value>/home/fiep/src/svn/robotics-ros/packages/orocos/ocl/ocl-1.10/ocl/lib/liborocos-reporting</value></simple>
+<simple name="Import" type="string"><value>/home/fiep/src/svn/robotics-ros/packages/orocos/bfl/bfl-0.7/bfl-boost/lib/rtt/gnulinux/plugins/liborocos-bfl_toolkit</value></simple>
+
+<struct name="Reader" type="OCL::ReadGitData">
+  <struct name="Activity" type="PeriodicActivity">
+    <simple name="Period" type="double"><value>0.001</value></simple> 
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>1</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/readGitData.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>Reporter</value></simple>
+  </struct>
+</struct>
+
+<struct name="Reporter" type="OCL::FileReporting">
+  <struct name="Activity" type="PeriodicActivity">
+    <simple name="Period" type="double"><value>0.001</value></simple> 
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="LoadProperties" type="string"><value>cpf/reporter.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>Reader</value></simple>
+  </struct>
+</struct>
+
+</properties>

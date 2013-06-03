@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/orocos/!svn/ver/34193/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack
+END
+twoLevelMTTD.rosinstall
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/orocos/!svn/ver/33505/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTD.rosinstall
+END
+stack.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/orocos/!svn/ver/33379/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/stack.xml
+END
+orocos_ros_integration.patch
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/orocos/!svn/ver/33501/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/orocos_ros_integration.patch
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/orocos/!svn/ver/33379/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/Makefile
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/orocos/!svn/ver/33379/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/CMakeLists.txt
+END

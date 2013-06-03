@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+<simple name="Import" type="string"><value>$(find bfl_dataAssociationBranch)/bfl-boost/lib/liborocos-bfl.so</value></simple>
+<simple name="Import" type="string"><value>$(find bfl_dataAssociationBranch)/bfl-boost/lib/rtt/gnulinux/plugins/liborocos-bfl_toolkit</value></simple>
+<simple name="Import" type="string"><value>$(find ocl_1.10)/ocl/lib/liborocos-reporting</value></simple>
+
+<simple name="Import" type="string"><value>$(find twoLevelMTTD)/lib/libVBClusters</value></simple>
+<simple name="Import" type="string"><value>$(find twoLevelMTTD)/lib/libtwoLevelMTTD</value></simple>
+<simple name="Import" type="string"><value>$(find twoLevelMTTD)/lib/libprepareSeparatedMeasurement</value></simple>
+<simple name="Import" type="string"><value>$(find twoLevelMTTD)/lib/libNumberObjectsEstimator</value></simple>
+<simple name="Import" type="string"><value>$(find readGitData)/lib/libreadGitData</value></simple>
+
+<struct name="ReaderGit" type="OCL::ReadGitData">
+  <struct name="Activity" type="NonPeriodicActivity">
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>1</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/readGitData.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+  </struct>
+</struct>
+
+<struct name="PrepareSeparatedMeasurement" type="OCL::PrepareSeparatedMeasurementGit">
+  <simple name="Server" type="boolean"><value>1</value></simple>
+  <struct name="Activity" type="NonPeriodicActivity">
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>0</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>1</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/PrepareSeparatedMeasurement.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>ReaderGit</value></simple>
+    <simple type="string"><value>Reporter</value></simple>
+  </struct>
+</struct>
+
+<struct name="twoLevelMTTD" type="OCL::EstimationGaussian">
+  <simple name="Server" type="boolean"><value>1</value></simple>
+  <simple name="UseNamingService" type="boolean"><value>0</value></simple>
+  <struct name="Activity" type="PeriodicActivity">
+    <simple name="Period" type="double"><value>0.01</value></simple> 
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>1</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/EstimationGaussianGitAntz.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>VBClusters</value></simple>
+    <simple type="string"><value>NumberObjectsEstimator</value></simple>
+    <simple type="string"><value>PrepareSeparatedMeasurement</value></simple>
+    <simple type="string"><value>Reporter</value></simple>
+  </struct>
+</struct>
+
+<struct name="VBClusters" type="OCL::VBClusters">
+  <struct name="Activity" type="NonPeriodicActivity">
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>1</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/VBClustersGitAntz.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>PrepareSeparatedMeasurement</value></simple>
+  </struct>
+</struct>
+
+<struct name="NumberObjectsEstimator" type="OCL::NumberObjectsEstimator">
+  <struct name="Activity" type="NonPeriodicActivity">
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="AutoConnect" type="boolean"><value>1</value></simple>
+  <simple name="UpdateProperties" type="string"><value>cpf/NumberObjectsEstimatorGitAntz.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>VBClusters</value></simple>
+  </struct>
+</struct>
+
+<struct name="Reporter" type="OCL::FileReporting">
+  <struct name="Activity" type="NonPeriodicActivity">
+    <!--<simple name="Period" type="double"><value>10</value></simple>  -->
+    <simple name="Priority" type="short"><value>0</value></simple>
+    <simple name="Scheduler" type="string"><value>ORO_SCHED_OTHER</value></simple>
+  </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  <simple name="LoadProperties" type="string"><value>cpf/reporterEstimationGaussianGit.cpf</value></simple>
+  <struct name="Peers" type="PropertyBag">
+    <simple type="string"><value>PrepareSeparatedMeasurement</value></simple>
+    <simple type="string"><value>twoLevelMTTD</value></simple>
+    <simple type="string"><value>NumberObjectsEstimator</value></simple>
+    <simple type="string"><value>VBClusters</value></simple>
+  </struct>
+</struct>
+
+</properties>

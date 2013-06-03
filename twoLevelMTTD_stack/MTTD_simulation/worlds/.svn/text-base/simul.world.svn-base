@@ -1,0 +1,216 @@
+size [30 30]
+
+
+define circle model
+(
+  gui_nose 0
+  laser_return 1
+)
+
+define topurg laser
+(
+  range_min 0.0
+  range_max 30.0
+  fov 180 
+  samples 361 
+  # generic model properties
+  color "black"
+  size [ 0.050 0.050 0.100 ]
+)
+
+define pr2 position
+(
+  size3 [0.65 0.65 0.25]
+  origin3 [-0.05 0 0 0]
+  gui_nose 1
+  drive "diff"
+  topurg(pose [0.275 0 -0.450 0])
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+  gui_movemask 0
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+
+interval_sim 100  # simulation timestep in milliseconds
+interval_real 100  # real-time interval between simulation updates in milliseconds 
+
+window
+( 
+  size [ 627.000 876.000 ]  
+  center [-33.294 -3.049] 
+  rotate [ 59.500 161.000 ]
+  scale 27.618
+)
+
+# load an environment bitmap
+floorplan
+( 
+  name "autolab"
+  bitmap "../maps/autolab.png"
+ # map dimension (in meters)
+  size [40.450 34.450 2.000]
+  pose [-19.000 -6.000 0 0]
+  boundary 1
+)
+
+# throw in a robot
+pr2( pose [-31.27 7.8  0 0] name "robot" color "blue")
+
+
+
+circle
+( 
+  name "person1"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-37.054 6.252 0 0 ]
+)
+circle
+( 
+  name "person2"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-37.931 1.754 0 0]
+)
+circle
+( 
+  name "person3"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-36.738 7.114 0 0]
+)
+circle
+( 
+  name "person4"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-36.685 7.929 0 0]
+)
+circle
+( 
+  name "person5"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-35.150 8.134 0 0]
+)
+circle
+( 
+  name "person6"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.538 -0.729 0 0]
+)
+circle
+( 
+  name "person7"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.445 -2.192 0 0]
+)
+circle
+( 
+  name "person8"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.592 -4.483 0 0]
+)
+circle
+( 
+  name "person9"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.797 -6.810 0 0]
+)
+circle
+( 
+  name "person10"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person11"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person12"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person13"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person14"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person15"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person16"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person17"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person18"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person19"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)
+circle
+( 
+  name "person20"
+  bitmap "bitmaps/circle.png"
+  size3 [0.45 0.45 5.0]
+  pose [-27.522 -8.602 0 0]
+)

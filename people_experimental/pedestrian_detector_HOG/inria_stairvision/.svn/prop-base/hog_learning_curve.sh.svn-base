@@ -1,0 +1,7 @@
+K 13
+svn:mergeinfo
+V 274
+/branches/arm_planning_branch/vision/people/inria_stairvision/hog_learning_curve.sh:27259-27893
+/pkg/trunk/vision/people/inria_stairvision/hog_learning_curve.sh:5-162,263-18639
+/tags/controller_manager_rename/vision/people/inria_stairvision/hog_learning_curve.sh:25336-25352
+END

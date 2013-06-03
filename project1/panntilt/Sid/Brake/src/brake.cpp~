@@ -1,0 +1,178 @@
+#include "ros/ros.h"
+#include "nav_msgs/Odometry.h"
+#include "ros/message.h"
+#include "ros/time.h"
+#include "tf/transform_datatypes.h"
+
+//PTUCLient
+#include "actionlib/client/simple_action_client.h"
+#include "actionlib/client/terminal_state.h"
+#include "ptu_control/PtuGotoAction.h"
+#include "ptu_control/PtuResetAction.h"
+
+//TF for PTU
+#include <tf/transform_broadcaster.h>
+#include "sensor_msgs/JointState.h"
+
+#include <laser_assembler/AssembleScans.h>
+#include <sensor_msgs/PointCloud.h>
+
+//Velocity Publisher/Forwarder
+ros::Publisher pub_vel;
+ros::Publisher pub_pcl;
+ros::ServiceClient client;
+
+void pose_callback(const nav_msgs::Odometry::ConstPtr& msg);//Calback for Pose
+void vel_callback(const geometry_msgs::Twist::ConstPtr& msg);//Callback for Velocity
+void roatatePTU();//Function to Rotate the PTU
+
+bool Init = false;//Bool used to capture Pose to startup
+bool stop = false;//Bool used to toggle brakes
+int LeftRight = 1;//Int used to toggle between Left-to-Right and Right-to-Left rotations
+nav_msgs::Odometry Last_Pose;//Last Scanned Odometry Information
+double dist_tolerance, theta_tolerance;//Allowed change in Distance and Angle before Re-Scan
+double delta_pan;//The Change in Angle for panning
+
+int main(int argc, char **argv)
+{
+  ros::init(argc, argv, "Brake");
+  ros::NodeHandle n;
+  ros::NodeHandle n_private("~");
+
+  n_private.param("dist_tolerance", dist_tolerance , 2.0);//Default set to 2 metres
+  n_private.param("theta_tolerance", theta_tolerance , M_PI/3);//Default set to 60 degrees
+  n_private.param("pan", delta_pan , 30.0);//Default set to 30 degrees
+  n_private.setParam("~fixed_frame", '/map');
+  n_private.setParam("~max_scans", 1);
+
+
+  ros::ServiceClient client = n.serviceClient<laser_assembler::AssembleScans>("assemble_scans");
+
+  ros::Subscriber CurrentPose = n.subscribe("/pose", 1000, pose_callback);
+  ros::Subscriber VelSub = n.subscribe("/cmd_vel", 1000, vel_callback);
+
+  pub_vel = n.advertise<geometry_msgs::Twist>("/p2os/cmd_vel",1000);//Publish Velocity to /p2os/cmd_vel
+  pub_pcl = n.advertise<sensor_msgs::PointCloud>("/cloud_out", 1000);//Publish Assembled PointCloud
+
+  ros::spin();
+  return 0;
+}
+void pose_callback(const nav_msgs::Odometry::ConstPtr& msg)
+{
+  if(Init)
+  {
+    //Capture current Pose
+    double x, y, z, theta, thetax, thetay, thetaz, thetaw, theta1, theta2, dist;//Intermediate Variables
+    x=msg->pose.pose.position.x - Last_Pose.pose.pose.position.x;//Change in x
+    y=msg->pose.pose.position.y - Last_Pose.pose.pose.position.y;//Change in y
+    z=msg->pose.pose.position.z - Last_Pose.pose.pose.position.z;//Change in z
+    thetax=msg->pose.pose.orientation.x;//Current Quaterion x
+    thetay=msg->pose.pose.orientation.y;//Current Quaterion y
+    thetaz=msg->pose.pose.orientation.z;//Current Quaterion z
+    thetaw=msg->pose.pose.orientation.w;//Current Quaterion w
+    //Convert from Quaternion to Degree rotation around Z-Axis. Need to convert first and CANNOT simply
+    //subtract old x,y,z,w values from new ones, as in the case for the x,y,z for the position since the
+    //Quaternion coordinate system does not work that way. MUST convert to degrees before looking for change
+    //in angle.
+    theta1=atan2(2*(Last_Pose.pose.pose.orientation.w*Last_Pose.pose.pose.orientation.z + Last_Pose.pose.pose.orientation.x*Last_Pose.pose.pose.orientation.y),(1 - 2*(Last_Pose.pose.pose.orientation.z*Last_Pose.pose.pose.orientation.z + Last_Pose.pose.pose.orientation.y*Last_Pose.pose.pose.orientation.y)));//Last angle
+    theta2=atan2(2*(thetaw*thetaz + thetax*thetay),(1 - 2*(thetaz*thetaz + thetay*thetay)));//Current Angle
+    theta = theta1-theta2;//Change in Angle
+    dist= sqrt(x*x + y*y + z*z);//Change in distance
+    if((dist >= dist_tolerance) || ( fabs(theta) >= theta_tolerance))//Check if either Angle or Distance has changed enough for a Re-Scan
+    {
+      stop = true;//Set the Powerbot to Stop
+      //Save Current Pose
+      Last_Pose.pose.pose.position.x=msg->pose.pose.position.x;
+      Last_Pose.pose.pose.position.y=msg->pose.pose.position.y;
+      Last_Pose.pose.pose.position.z=msg->pose.pose.position.z;
+      Last_Pose.pose.pose.orientation.x=msg->pose.pose.orientation.x;
+      Last_Pose.pose.pose.orientation.y=msg->pose.pose.orientation.y;
+      Last_Pose.pose.pose.orientation.z=msg->pose.pose.orientation.z;
+      Last_Pose.pose.pose.orientation.w=msg->pose.pose.orientation.w;
+    }
+  }
+  else
+  {
+    //Capture initial pose on Node Start-Up
+    Init = true;
+    stop = true;
+    Last_Pose.pose.pose.position.x=msg->pose.pose.position.x;
+    Last_Pose.pose.pose.position.y=msg->pose.pose.position.y;
+    Last_Pose.pose.pose.position.z=msg->pose.pose.position.z;
+    Last_Pose.pose.pose.orientation.x=msg->pose.pose.orientation.x;
+    Last_Pose.pose.pose.orientation.y=msg->pose.pose.orientation.y;
+    Last_Pose.pose.pose.orientation.z=msg->pose.pose.orientation.z;
+    Last_Pose.pose.pose.orientation.w=msg->pose.pose.orientation.w;
+  }
+}
+void vel_callback(const geometry_msgs::Twist::ConstPtr& msg)
+{
+
+  if(stop)//If Pose Callback sets stop to true, set velocities to stop
+  {
+    geometry_msgs::Twist Vel;//Velocity Structure for setting user defined Velocity
+    Vel.angular.z = 0;
+    Vel.linear.x = 0;
+    pub_vel.publish(Vel);//STOP
+    ROS_INFO("Stop");
+    roatatePTU();
+    stop = false;
+    ROS_INFO("Go");
+  }
+  else//Otherwise pass through current speed
+    pub_vel.publish(msg);
+}
+void roatatePTU()
+{
+  //Set up ActionServer Client for the Pan-Tilt Unit
+  actionlib::SimpleActionClient<ptu_control::PtuGotoAction> SetPTU("SetPTUState", true);//Used to set Pan-Tilt
+  actionlib::SimpleActionClient<ptu_control::PtuResetAction> ResetPTU("ResetPtu", true);//Used to reset position to (0,0). Not used in current code (the Client), but the Server has the
+                                                                                        //capability to use this if you need to in the future
+  SetPTU.waitForServer();//Wait for SetPTUState to be active
+  ResetPTU.waitForServer();//Wait for ResetPtu to be active. Uncomment if needed.
+  ptu_control::PtuGotoGoal Goal;//Goal to be Set
+  ptu_control::PtuResetGoal Reset;//Reset to (0,0) Position. The Value you put into this doesn't matter, it just sets a flag which causes the server to reset
+
+  laser_assembler::AssembleScans srv;
+  sensor_msgs::PointCloud cloud_out;
+
+  cloud_out.points.clear();
+  cloud_out.channels.clear();
+  cloud_out.header.clear();
+
+  int count = 0;
+  while(count <= 180/delta_pan)
+  {
+    Goal.tilt = 0;
+    Goal.pan_vel = 30;
+    Goal.tilt_vel = 30;
+    Goal.pan = (float) LeftRight*(90 - delta_pan*count);
+    SetPTU.sendGoalAndWait(Goal);
+
+    //Check
+    ROS_INFO("CHECK %i", count);
+    ros::Duration(.2).sleep();//Sleep while PointCloud settles. Number attained from Experimentation.
+
+    srv.request.begin = ros::Time::now()- .1;
+    srv.request.end = ros::Time::now();
+    if(client.call(srv))
+    {
+      if (srv.response.cloud.points.size() <= 0)
+      {
+        return;
+      }
+      cloud_out=srv.response.cloud;
+    }
+
+    count++;
+  }
+  pub_pcl.publish(cloud_out);
+
+  //Toggle between going Left-to-Right and Right-to-Left
+  if(LeftRight == 1)
+    LeftRight = -1;
+  else
+    LeftRight = 1;
+
+}
+

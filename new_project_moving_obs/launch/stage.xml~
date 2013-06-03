@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="stage" type="stageros" name="stage" args="$(find new_project_moving_obs)/launch/worlds/project.world" respawn="false" output="screen">
+  <node pkg="stage_interface" type="stage_interface" respawn="false" output="screen" name="stageROS_interface">
+  </node>
+
+</launch>

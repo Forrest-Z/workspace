@@ -1,0 +1,17 @@
+digraph G {
+"/base_footprint" -> "/wheel_right"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_link" -> "/base_footprint"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/odom" -> "/base_link"[label="Broadcaster: /p2os\nAverage rate: 10.208 Hz\nMost recent transform: 0.157 sec old \nBuffer length: 4.800 sec\n"];
+"/base_footprint" -> "/wheel_left"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_footprint" -> "/wheel_small_right"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_footprint" -> "/wheel_small_left"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_footprint" -> "/bottom_base"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_footprint" -> "/top_base"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_footprint" -> "/lms_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_footprint" -> "/swissranger_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+"/base_footprint" -> "/base_laser_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.201 Hz\nMost recent transform: -0.463 sec old \nBuffer length: 4.940 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1348605790.566"[ shape=plaintext ] ;
+ }->"/odom";
+}

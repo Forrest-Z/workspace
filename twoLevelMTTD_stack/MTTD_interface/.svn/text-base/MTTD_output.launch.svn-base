@@ -1,0 +1,3 @@
+<launch>
+<node name="MTTDOutput" pkg="orocos_ros_integration" type="rosdeployer" args="--start $(find MTTD_interface)/MTTD_output.xml --path $(find MTTD_interface)" output="screen"/>
+</launch>

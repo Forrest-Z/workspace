@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/orocos/!svn/ver/33406/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan
+END
+separateLaserScanMeasurementsEnvironmentTester.xml
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/separateLaserScanMeasurementsEnvironmentTester.xml
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/manifest.xml
+END
+plotResults.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/plotResults.py
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/orocos/!svn/ver/33406/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/mainpage.dox
+END
+plotResults.m
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/plotResults.m
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/Makefile
+END
+separateLaserScanMeasurementsEnvironment.xml
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/separateLaserScanMeasurementsEnvironment.xml
+END
+separator.svg
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/orocos/!svn/ver/33389/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/separateEnvironmentFromLaserScan/separator.svg
+END

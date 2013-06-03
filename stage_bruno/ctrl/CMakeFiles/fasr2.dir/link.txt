@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -O2 -DNDEBUG -Wall     -shared -Wl,-soname,fasr2.so -o fasr2.so CMakeFiles/fasr2.dir/fasr2.o CMakeFiles/fasr2.dir/astar/findpath.o ../../libstage/libstage.so.4.0.0 -lGLU -lGL -lSM -lICE -lX11 -lXext -lltdl -Wl,-rpath,/home/bruno/Newstage/Stage-4.0.0-src/libstage: 

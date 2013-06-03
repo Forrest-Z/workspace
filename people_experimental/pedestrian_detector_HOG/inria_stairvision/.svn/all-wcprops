@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision
+END
+hogWrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/hogWrapper.cpp
+END
+buildPatchResponseCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/buildPatchResponseCache.cpp
+END
+defaultHOG.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/defaultHOG.cpp
+END
+specifications
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/specifications
+END
+classifyImages.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/classifyImages.cpp
+END
+extractorCat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/extractorCat.cpp
+END
+hogWrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/hogWrapper.h
+END
+hog_learning_curve.sh
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/hog_learning_curve.sh
+END
+defaultHogChannel0.xml
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/defaultHogChannel0.xml
+END
+learning_curve_points_README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/learning_curve_points_README.txt
+END
+svl2inria.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/svl2inria.cpp
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/Makefile
+END
+learning_curve_points.txt
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/wg-ros-pkg/!svn/ver/42502/branches/trunk_cturtle/stacks/people_experimental/pedestrian_detector_HOG/inria_stairvision/learning_curve_points.txt
+END

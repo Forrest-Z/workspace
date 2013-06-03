@@ -1,0 +1,9 @@
+#!/bin/bash
+#./cleanFigures
+#./appendFigures
+./moveFigures
+#./place_text_framesEXP
+#./resizeFigures
+
+#ffmpeg -i figures/composed%04d.png -qscale 4 -b 800 -s 1600x600 -r 24 video.mpg
+ffmpeg -i figures/moved%04d.png -qscale 1 video.mpg

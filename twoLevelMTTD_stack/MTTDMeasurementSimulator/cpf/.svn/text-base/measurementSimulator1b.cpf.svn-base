@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "cpf.dtd">
+<properties>
+  <simple name="environment_file" type="string"><description>The name of the file which contains the vector of environment measurements.</description><value>cpf/environment.txt</value></simple>
+  <struct name="scannerPos" type="ColumnVector">
+     <description>The position of the scanner in the world</description>
+     <simple name="1" type="double"><description>1th element of vector</description><value>0</value></simple>
+     <simple name="2" type="double"><description>2th element of vector</description><value>0</value></simple>
+  </struct>
+  <simple name="nbeams" type="long"><description>The number of beams in the environment measurement.</description><value>181</value></simple>
+  <simple name="nComp" type="long"><description>The number of components of the mixture.</description><value>1</value></simple>
+  <struct name="mus" type="ColumnVectors">
+     <description>mean of components of the mixture</description>
+     <struct name="Element1" type="ColumnVector">
+        <description>1th element of list</description>
+        <simple name="1" type="double"><description>1th element of vector</description><value>+8.5</value></simple>
+        <simple name="2" type="double"><description>2th element of vector</description><value>+0.4</value></simple>
+     </struct>
+  </struct>
+  <simple name="rangeMax" type="double"><description>rangeMax the maximum of the uniform distribution over the range</description><value>8</value></simple>
+  <simple name="maxNumComp" type="long"><description>the maximum number of objects</description><value>10</value></simple>
+  <simple name="maxNumMeas" type="long"><description>the maximum number of measurements</description><value>181</value></simple>
+  <struct name="muSysUncertainty" type="ColumnVector">
+     <description>the expected value of the system model uncertainty</description>
+     <simple name="1" type="double"><description>1th element of vector</description><value>0</value></simple>
+     <simple name="2" type="double"><description>2th element of vector</description><value>0</value></simple>
+  </struct>
+  <struct name="sigmaSysUncertainty" type="SymmetricMatrix">
+     <description>the covariance of the system model uncertainty</description>
+     <struct name="1" type="RowVector">
+        <description>1th row of matrix</description>
+        <simple name="1" type="double"><description>1th element of vector</description><value>0.00001</value></simple>
+        <simple name="2" type="double"><description>2th element of vector</description><value>0.0000</value></simple>
+     </struct>
+     <struct name="2" type="RowVector">
+        <description>2th row of matrix</description>
+        <simple name="1" type="double"><description>1th element of vector</description><value>0.0</value></simple>
+        <simple name="2" type="double"><description>2th element of vector</description><value>0.00001</value></simple>
+     </struct>
+  </struct>
+  <struct name="sysModelMatrix" type="Matrix">
+     <description>the matrix of the linear system model without inputs </description>
+     <struct name="1" type="RowVector">
+        <description>1th row of matrix</description>
+        <simple name="1" type="double"><description>1th element of vector</description><value>1.0</value></simple>
+        <simple name="2" type="double"><description>2th element of vector</description><value>0.0</value></simple>
+     </struct>
+     <struct name="2" type="RowVector">
+        <description>2th row of matrix</description>
+        <simple name="1" type="double"><description>1th element of vector</description><value>0.0</value></simple>
+        <simple name="2" type="double"><description>2th element of vector</description><value>1.0</value></simple>
+     </struct>
+  </struct>
+  <simple name="debugInfo" type="boolean"><description>show debug info of mixture filter or not </description><value>0</value></simple>
+  <simple name="reporting" type="boolean"><description>report to a file or not</description><value>1</value></simple>
+  <struct name="radiusStates" type="array">
+     <description>the radius of the different modeled objects </description>
+     <simple type="double"><value>0.17</value></simple>
+  </struct>
+</properties>

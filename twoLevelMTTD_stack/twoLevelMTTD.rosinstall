@@ -1,0 +1,32 @@
+- svn:
+    local-name: xacro
+    uri: https://code.ros.org/svn/ros-pkg/stacks/common/tags/cturtle/xacro
+
+- svn:
+    local-name: twoLevelMTTD_stack
+    uri: http://svn.mech.kuleuven.be/repos/orocos/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack
+
+- svn:
+    local-name: orocos_toolchain_ros
+    uri: http://svn.mech.kuleuven.be/repos/orocos/trunk/kul-ros-pkg/stacks/orocos_toolchain_ros
+
+- svn:
+    local-name: orocos/rtt_1.10
+    uri: http://svn.mech.kuleuven.be/repos/orocos/orocos-apps/public_release/orocos-pkgs/rtt/rtt_1.10
+
+- svn:
+    local-name: orocos/ocl_1.10
+    uri: http://svn.mech.kuleuven.be/repos/orocos/orocos-apps/public_release/orocos-pkgs/ocl/ocl_1.10
+
+- svn:
+    local-name: orocos/kdl_1.0
+    uri: http://svn.mech.kuleuven.be/repos/orocos/orocos-apps/public_release/orocos-pkgs/kdl/kdl_1.0
+
+- svn:
+    local-name: orocos/bfl_dataAssociationBranch
+    uri: http://svn.mech.kuleuven.be/repos/orocos/orocos-apps/public_release/orocos-pkgs/bfl/bfl_dataAssociationBranch
+
+- svn:
+    local-name: orocos/orocos_ros_integration
+    uri: http://svn.mech.kuleuven.be/repos/orocos/orocos-apps/public_release/orocos-pkgs/orocos_ros_integration
+

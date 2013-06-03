@@ -1,0 +1,21 @@
+<package>
+  <description brief="MTTD_visualize">
+
+     This package is used in order to visualize in rviz MTTD_msgs/peopledata information, incoming
+     from twoLevelMTTD algorithm
+
+  </description>
+  <author>Enea Scioni enea.scioni@student.unife.it</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/MTTD_visualize</url>
+  <depend package="roscpp" />
+  <depend package="geometry_msgs" />
+  <depend package="std_msgs" />
+  <depend package="visualization_msgs" />
+  <depend package="MTTD_msgs" />
+  <depend package="rviz" />
+
+</package>
+
+

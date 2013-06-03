@@ -1,0 +1,7 @@
+#!/bin/sh
+
+DEPLOYER_BASE="$ROS_ROOT/../"
+DEPLXML="MTTD_interface.xml"
+
+rosrun orocos_ros_integration rosdeployer -s $DEPLXML -ldebug
+#rosrun ocl_1.10 deployer-gnulinux -s $DEPLXML --path=$DEPLOYER_BASE -ldebug

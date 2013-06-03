@@ -1,0 +1,15 @@
+<launch>
+
+	<node pkg="gmapping" type="slam_gmapping" name="gmapping_node" >
+		<remap from="scan" to="base_scan"/>		
+		<param name="maxUrange" value="5"/>		
+		<param name="_odom_frame" value="odom"/>
+
+		<param name="temporalUpdate" value="1"/>
+		<param name="throttle_scans" value="5"/>
+		<param name="map_update_interval" value="2"/>
+		
+		
+	</node>
+
+</launch>

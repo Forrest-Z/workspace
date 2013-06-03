@@ -1,0 +1,383 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b twoLevelMTTDExamples is package containing example programs for two-level
+Bayesian multitarget tracking and localization algorithm.
+It contains three examples in which prerecorded experimental data is processed
+and a simulation example in which data from a simulator is used.
+
+<!-- 
+In addition to providing an overview of your package,
+this is the section where the specification and design/architecture 
+should be detailed. While the original specification may be done on the
+wiki, it should be transferred here once your package starts to take shape.
+You can then link to this documentation page from the Wiki. 
+-->
+
+
+
+\section extraDoc Using the examples
+Go to the twoLevelMTTDExamples package:
+
+<code>
+roscd twoLevelMTTDExamples
+</code>
+
+Build all software needed for the examples
+
+<code>
+rosmake twoLevelMTTDExamples
+</code>
+
+\subsection exp1 Experiment 1
+The goal of this experiment is to show the tracking and localization
+capabilities of the two-level multitargt tracking and localization algorithm.
+The experimental setup consists of a natural office environment populated by people. The sensor is a Sick laser scanner
+(range 8m), fixed with respect to the environment.
+During the experiment, one person is standing still somewhere in the middle of
+the office (this is no restriction, just a means of validation). During the
+experiment two other persons enter the room and walk around at random (no
+instructions were given), resulting in a maximum of three targets.
+
+<b> Running the first experiment </b>
+<br>
+Go to the correct directory:
+
+<code>
+roscd twoLevelMTTDExamples/experiment1
+</code>
+
+To start the program processing the first set of xperimental data:
+
+<code>
+./runTwoLevelMTTDFile
+</code>
+
+All orocos components are automatically started. You can enter the components by
+using:
+
+<code>
+cd COMPONENT_NAME
+</code>
+
+and watch the component's interface with:
+
+<code>
+cd ls.
+</code>
+
+To stop the program type:
+
+<code>
+quit
+</code>
+
+The results of the target tracking and localization are written to the file
+report.txt.
+
+To visualize the results first delete the first two lines from the report file
+and then visualize the results with python:
+
+<code>
+python plotResults.py
+</code>
+
+<b> Measurement preprocessing </b>
+<br>
+First, the prerecorded measurements are read from a file. Subsequently, the
+measurements are passed on to the measurement preprocessing.
+
+The measurement preprocessing  consists of a simple continuous Bayes Filter,
+estimating the probability that the lser scanner measurements read from the file do not originate from the (in this case
+prerecorded) environment.
+The prerecorded environment consists of a set of distance measurements along the different beams of the laser scanner.
+The preprocessed measurements are fed to the two-level multitarget tracking and
+localization algorithm.
+
+<b>Modeling </b>
+<br>
+A person is modeled as a cylindrically shaped object, resulting in a circular
+cross-section with the laser's scanning plane. A person's motion is modeled
+using a constant n'th order model (constant position, constant velocity, ...). 
+The shape corresponds to a circle with radius
+R. The shape is assumed to be static and known.
+Finally, a simple Gaussian measurement model is used that represents the
+measurements as a noisy cloud around the target's position.
+
+In this experiment the prior for the Variational Bayesian clustering does not
+make explicit use of the target's shape. 
+
+<b>Component overview </b>
+<br>
+The picture below gives an overview of the components and their connections in this application.
+Check the API for more detailed explanation of the components.
+<img
+src="http://people.mech.kuleuven.be/~tdelaet/twoLevelMTTD/figures/twoLevelMTTDFile.png" alt="A component overview of the two-level MTTD for the first experiment" height="20">
+
+\subsection exp2 Experiment 2
+To investigate the algorithm's robustness to missed detections and close target
+interactions the algorithm was applied to Sick laser range data set recorded
+by Khan et al. and available <a href="http://www.kinetrack.org/"> here</a>.
+To show the robustness to missed
+detections only the data from a single laser scanner was used, which
+is reported as the toughest situation for a tracking
+system. Five people were asked to occasionally bump
+into each other to introduce close interactions.  For the data set consisting of
+4752 scans, a human
+observer counted 164 missed interactions. A missed detection is defined as an
+event where all of the measurements accounting for a single target disappeared
+for several scans.
+This paper compares the results of the proposed algorithm with the tracking
+algorithm of Khan et al. 
+The goal of this experiment is to show the tracking and localization
+capabilities of the two-level multitargt tracking and localization algorithm.
+The experimental setup consists of a natural office environment populated by people. The sensor is a Sick laser scanner
+(range 8m), fixed with respect to the environment.
+During the experiment, one person is standing still somewhere in the middle of
+the office (this is no restriction, just a means of validation). During the
+experiment two other persons enter the room and walk around at random (no
+instructions were given), resulting in a maximum of three targets.
+
+<b> Running the second experiment </b>
+<br>
+Go to the correct directory:
+
+<code>
+roscd twoLevelMTTDExamples/experiment2
+</code>
+
+To start the program processing the second set of experimental data:
+
+<code>
+./runTwoLevelMTTDGitData
+</code>
+
+All orocos components are automatically started. You can enter the components by
+using:
+
+<code>
+cd COMPONENT_NAME
+</code>
+
+and watch the component's interface with:
+
+<code>
+cd ls.
+</code>
+
+To stop the program type:
+
+<code>
+quit
+</code>
+
+The results of the target tracking and localization are written to the file
+report.txt.
+
+To visualize the results first delete the first two lines from the report file
+and then visualize the results with python:
+
+<code>
+python plotResults.py
+</code>
+
+<b> Measurement preprocessing </b>
+<br>
+In the measurement preprocessing the measurements are simply read from the
+files provided by the Georgia Institute of Technology.
+
+<b>Modeling </b>
+<br>
+A person is modeled as a cylindrically shaped object, resulting in a circular
+cross-section with the laser's scanning plane. A person's motion is modeled
+using a constant velocity model. 
+The shape corresponds to a circle with radius
+R. The shape is assumed to be static and known.
+Finally, a simple Gaussian measurement model is used that represents the
+measurements as a noisy cloud around the target's position.
+
+In this experiment the prior for the Variational Bayesian clustering does not
+make explicit use of the target's shape. 
+
+<b>Component overview </b>
+<br>
+The picture below gives an overview of the components and their connections in this application.
+Check the API for more detailed explanation of the components.
+<img
+src="http://people.mech.kuleuven.be/~tdelaet/twoLevelMTTD/figures/twoLevelMTTDGit.png" alt="A component overview of the two-level MTTD for the second  experiment" height="20">
+
+\subsection exp3 Experiment 3
+To investigate the algorithm's robustness to partial and full
+occlusions a video of ants recorded by the Georgia Institute of
+Technology College of Computing <a href="http://www.kinetrack.org/"> here</a> is used.
+In the
+video a colony of Leptothorax curvinoposis ants is in the process of nest
+emigration. The artificial nest located in the field of view consists of a
+cavity constructed out of balsa wood and top covered by a pane of glass. Ants
+may enter the nest at the entrance at the top of the image, but they may also
+walk on the glass cover. As a result, there are two planes in which ants
+may move: the top glass and the floor of the nest cavity. The algorithm should
+be robust to occlusions, partial and full, caused by the ants moving over one
+another.
+
+
+<b> Running the third experiment </b>
+<br>
+Go to the correct directory:
+
+<code>
+roscd twoLevelMTTDExamples/experiment3
+</code>
+
+To start the program processing the second set of experimental data:
+
+<code>
+./runTwoLevelMTTDGitData
+</code>
+
+All orocos components are automatically started. You can enter the components by
+using:
+
+<code>
+cd COMPONENT_NAME
+</code>
+
+and watch the component's interface with:
+
+<code>
+cd ls.
+</code>
+
+To stop the program type:
+
+<code>
+quit
+</code>
+
+The results of the target tracking and localization are written to the file
+report.txt.
+
+To visualize the results first delete the first two lines from the report file
+and then visualize the results with python:
+
+<code>
+python plotResults.py
+</code>
+
+<b> Measurement preprocessing </b>
+<br>
+The video available at the website was preprocessed using a simple procedure as
+proposed by Khan et al.\cite{KhanBalchDellaert2006}: image pixel thresholds are applied to obtain ant measurements.
+The original images were blurred and down sampled. Next pixels within the
+following
+YUV ranges were considered as detections: 39<Y<101, 116<U<125 and
+128<V<136. 
+The results of this preprocessing is written to x.txt, y.txt, and t.txt,
+containing the image u and v coordinates and timestamp respectively.
+
+In the program this preprocessed measurements are read from the files. 
+
+
+<b>Modeling </b>
+<br>
+The ant's motion is modeled as a
+constant n'th order motion model (e.g. constant position, velocity, ... )
+(currently set to constant velocity: see property files) 
+
+The ant's shape  is modeled as an ellipse with
+equatorial radii l1 and l2. The ant's shape is assumed to be
+static and known.
+A simple Gaussian measurement model is used that represents the measurements
+consisting of the pixel coordinates.
+
+In this experiment the prior for the Variational Bayesian clustering makes use
+of the ant's shape. 
+
+<b>Component overview </b>
+<br>
+The picture below gives an overview of the components and their connections in this application.
+Check the API for more detailed explanation of the components.
+<img
+src="http://people.mech.kuleuven.be/~tdelaet/twoLevelMTTD/figures/twoLevelMTTDGit.png"
+alt="A component overview of the two-level MTTD for the third experiment" height="20">
+
+
+\subsection sim Simulation
+The simulation can be used to test the algorithm's  to partial and full
+occlusions, changing number of targets, ...
+The simulator simulates laser scanner measurements resulting from cylindrical
+targets moving in a prerecorded environment.
+
+
+<b> Running the simulation </b>
+<br>
+Go to the correct directory:
+
+<code>
+roscd twoLevelMTTDExamples/simulations
+</code>
+
+To start the program processing the simulation data:
+
+<code>
+./runTwoLevelMTTDSimulation
+</code>
+
+All orocos components are automatically started. You can enter the components by
+using:
+
+<code>
+cd COMPONENT_NAME
+</code>
+
+and watch the component's interface with:
+
+<code>
+cd ls.
+</code>
+
+To stop the program type:
+
+<code>
+quit
+</code>
+
+The results of the target tracking and localization are written to the file
+report.txt.
+
+To visualize the results first delete the first two lines from the report file
+and then visualize the results with python:
+
+<code>
+python plotResults.py
+</code>
+
+<b> Measurement preprocessing </b>
+<br>
+The simulator immediately returns measurements originating from targets only, so
+no measurement preprocessing is needed.
+
+<b>Modeling </b>
+<br>
+A target is modeled as a cylindrically shaped object, resulting in a circular
+cross-section with the laser's scanning plane. A target's motion is modeled
+using a constant n'th order model (constant position, constant velocity, ...). 
+The shape corresponds to a circle with radius
+R. The shape is assumed to be static and known.
+Finally, a simple Gaussian measurement model is used that represents the
+measurements as a noisy cloud around the target's position.
+
+In this experiment the prior for the Variational Bayesian clustering does not
+make explicit use of the target's shape. 
+
+<b>Component overview </b>
+<br>
+The picture below gives an overview of the components and their connections in this application.
+Check the API for more detailed explanation of the components.
+<img
+src="http://people.mech.kuleuven.be/~tdelaet/twoLevelMTTD/figures/twoLevelMTTDSimulator.png"
+alt="A component overview of the two-level MTTD for the simulations " height="20">
+
+
+*/

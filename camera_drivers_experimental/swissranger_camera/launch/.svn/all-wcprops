@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/swissranger_camera/launch
+END
+startcamera.launch
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/swissranger_camera/launch/startcamera.launch
+END
+test_sr.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/swissranger_camera/launch/test_sr.yaml
+END
+sr_usb.launch
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/swissranger_camera/launch/sr_usb.launch
+END
+sr_eth.launch
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/ros-pkg/!svn/ver/31589/branches/trunk_cturtle/stacks/camera_drivers_experimental/swissranger_camera/launch/sr_eth.launch
+END

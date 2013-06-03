@@ -1,0 +1,43 @@
+#!/bin/bash
+for i in `seq 1 75 `; do
+            FNAME1="intro.png"
+            if [ $i -lt 10 ]
+            then
+                 FNAME="figures/moved000$i.png"
+            else
+                if [ $i -lt 100 ]
+                then
+                    FNAME="figures/moved00$i.png"
+                else
+                     if [ $i -lt 1000 ]
+                     then
+                        FNAME="figures/moved0$i.png"
+                     else   
+                        FNAME="figures/moved$i.png"
+                     fi
+                fi
+            fi
+   cp "$FNAME1" "$FNAME"
+done
+
+for i in `seq 76 150 `; do
+            FNAME1="intro2.png"
+            if [ $i -lt 10 ]
+            then
+                 FNAME="figures/moved000$i.png"
+            else
+                if [ $i -lt 100 ]
+                then
+                    FNAME="figures/moved00$i.png"
+                else
+                     if [ $i -lt 1000 ]
+                     then
+                        FNAME="figures/moved0$i.png"
+                     else   
+                        FNAME="figures/moved$i.png"
+                     fi
+                fi
+            fi
+   cp "$FNAME1" "$FNAME"
+done
+

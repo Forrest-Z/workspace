@@ -1,0 +1,51 @@
+#include "ros/ros.h"
+#include "people_msgs/PositionMeasurement.h"
+#include "tf/transform_listener.h"
+#include "tf/message_filter.h"
+#include "message_filters/subscriber.h"
+#include <visualization_msgs/Marker.h>
+#include <list>
+#include "geometry_msgs/Point.h"
+#include <math.h>
+#include <fstream>
+#include <nav_msgs>
+using namespace std;
+using namespace ros;
+using namespace tf;
+
+static string fixed_frame = "/odom_combined";
+const int no=2;
+
+class PeoplePositionVel
+{
+std::vector<ros::Subscriber> cmdvel_subs_;
+//people_pos_vel_publisher::people_pos_vel people_pos_vel_;
+std::vector<nav_msgs::Odometry people_pos_vel_;
+
+PeoplePositionVel()
+{
+ros::NodeHandle n_;
+ for (int r=1;r<no;r++)
+  {
+    cmdvel_subs_.push_back(n_.subscribe<nav_msgs::Odometry>(mapName(ODOM,r), 10, boost::bind(&StageNode::cmdvelReceived, this, r, _1)));
+  }
+}
+
+PeoplePositionVel::mapName(const char *name, size_t robotID)
+{
+  static char buf[100];
+  snprintf(buf, sizeof(buf), "/robot_%u/%s", (unsigned int)robotID, name);
+  return buf;
+}
+
+void StageNode::cmdvelReceived(int idx, const boost::shared_ptr<nav_msgs::Odometry const>& msg)
+{
+  boost::mutex::scoped_lock lock(msg_lock);
+  this->people_pos_vel_[idx]=*msg;
+/*  this->people_pos_vel_[idx].pos.x=msg->pose.position.x;
+  this->people_pos_vel_[idx].pos.y=msg->pose.position.y;
+  this->people_pos_vel_[idx].vel.x=msg->twist.twist.linear.x;
+  this->people_pos_vel_[idx].vel.y=msg->twist.twist.linear.y;                                      
+*/
+}
+}

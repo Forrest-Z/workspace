@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 57
+.build_version
+.rosgcov_files
+TAGS
+bin
+build
+deps.gv
+lib
+
+K 13
+svn:mergeinfo
+V 0
+
+END

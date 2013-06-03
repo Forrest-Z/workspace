@@ -1,0 +1,187 @@
+Index: manifest.xml
+===================================================================
+--- manifest.xml	(revisione 33414)
++++ manifest.xml	(copia locale)
+@@ -20,7 +20,7 @@
+   <depend package="ocl_1.10" />
+   <depend package="std_msgs" />
+   <depend package="sensor_msgs" />
+-  <depend package="MTTL_msgs" />
++  <depend package="MTTD_msgs" />
+   
+   <platform os="ubuntu" version="9.04"/>
+   <platform os="ubuntu" version="9.10"/>
+Index: src/RosTypeConversion.hpp
+===================================================================
+--- src/RosTypeConversion.hpp	(revisione 33414)
++++ src/RosTypeConversion.hpp	(copia locale)
+@@ -9,9 +9,9 @@
+ #include "laserdata.hpp" //Added Enea Scioni
+ #include <sensor_msgs/LaserScan.h> //Added by Enea Scioni
+ #include <sensor_msgs/PointCloud.h> //Added by Enea Scioni
+-#include <MTTL_msgs/PeopleCoordinates.h> // Added by Enea Scioni
+-#include <MTTL_msgs/PositionMeasurement.h> // Added by Enea Scioni
+-#include <MTTL_msgs/People.h> // Added by Enea Scioni
++#include <MTTD_msgs/PeopleCoordinates.h> // Added by Enea Scioni
++#include <MTTD_msgs/PositionMeasurement.h> // Added by Enea Scioni
++#include <MTTD_msgs/People.h> // Added by Enea Scioni
+ #include "IMUData.h" // Added by Steven Bellens
+ #include "RosTypeTemplateConversion.hpp"
+ 
+@@ -226,8 +226,8 @@
+      //PeopleCoordinates msg support by Enea Scioni
+      template <>
+     struct StdRosTypeConversion<PeopleData>:
+-    public RosTypeConversion<MTTL_msgs::PeopleCoordinates,PeopleData>{
+-    static bool copyRosToOrocos(MTTL_msgs::PeopleCoordinatesConstPtr ros,PeopleData& orocos){
++    public RosTypeConversion<MTTD_msgs::PeopleCoordinates,PeopleData>{
++    static bool copyRosToOrocos(MTTD_msgs::PeopleCoordinatesConstPtr ros,PeopleData& orocos){
+     //The conversion code e.g. orocos=ros->data;
+       orocos.header.seq=ros->header.seq;
+       orocos.header.frame_id=ros->header.frame_id;
+@@ -242,7 +242,7 @@
+       //orocos.channels=ros->channels;
+     return true;
+     };
+-    static bool copyOrocosToRos(const PeopleData& orocos,MTTL_msgs::PeopleCoordinates& ros){
++    static bool copyOrocosToRos(const PeopleData& orocos,MTTD_msgs::PeopleCoordinates& ros){
+     //The conversion code e.g. ros.data=orocos;
+       ros.header.seq=orocos.header.seq;
+       ros.header.frame_id=orocos.header.frame_id;
+@@ -258,19 +258,19 @@
+   };
+ 
+  template <>
+-  struct StdRosTypeConversion<MTTL_msgs::PeopleCoordinates>
+-    : public RosTypeConversion<MTTL_msgs::PeopleCoordinates,MTTL_msgs::PeopleCoordinates>{
+-      static bool copyRosToOrocos(MTTL_msgs::PeopleCoordinatesConstPtr ros,MTTL_msgs::PeopleCoordinates& orocos){
++  struct StdRosTypeConversion<MTTD_msgs::PeopleCoordinates>
++    : public RosTypeConversion<MTTD_msgs::PeopleCoordinates,MTTD_msgs::PeopleCoordinates>{
++      static bool copyRosToOrocos(MTTD_msgs::PeopleCoordinatesConstPtr ros,MTTD_msgs::PeopleCoordinates& orocos){
+ 	orocos=(*ros);
+ 	return true;
+       };
+-      static bool copyOrocosToRos(const MTTL_msgs::PeopleCoordinates& orocos,MTTL_msgs::PeopleCoordinates& ros){
++      static bool copyOrocosToRos(const MTTD_msgs::PeopleCoordinates& orocos,MTTD_msgs::PeopleCoordinates& ros){
+       ros=orocos;
+       return true;
+       };
+     };
+-    struct PeopleCoordinatesTypeInfo : public RTT::TemplateTypeInfo<MTTL_msgs::PeopleCoordinates>{
+-	PeopleCoordinatesTypeInfo():RTT::TemplateTypeInfo<MTTL_msgs::PeopleCoordinates>("PeopleCoordinates")
++    struct PeopleCoordinatesTypeInfo : public RTT::TemplateTypeInfo<MTTD_msgs::PeopleCoordinates>{
++	PeopleCoordinatesTypeInfo():RTT::TemplateTypeInfo<MTTD_msgs::PeopleCoordinates>("PeopleCoordinates")
+ 	{}
+     };
+     
+@@ -278,8 +278,8 @@
+     //PositionMeasurement msg support by Enea Scioni
+      template <>
+     struct StdRosTypeConversion<MeasurementData>:
+-    public RosTypeConversion<MTTL_msgs::PositionMeasurement,MeasurementData>{
+-    static bool copyRosToOrocos(MTTL_msgs::PositionMeasurementConstPtr ros,MeasurementData& orocos){
++    public RosTypeConversion<MTTD_msgs::PositionMeasurement,MeasurementData>{
++    static bool copyRosToOrocos(MTTD_msgs::PositionMeasurementConstPtr ros,MeasurementData& orocos){
+     //The conversion code e.g. orocos=ros->data;
+       orocos.header.seq=ros->header.seq;
+       orocos.header.frame_id=ros->header.frame_id;
+@@ -301,7 +301,7 @@
+       orocos.initialization=ros->initialization;
+     return true;
+     };
+-    static bool copyOrocosToRos(const MeasurementData& orocos,MTTL_msgs::PositionMeasurement& ros){
++    static bool copyOrocosToRos(const MeasurementData& orocos,MTTD_msgs::PositionMeasurement& ros){
+     //The conversion code e.g. ros.data=orocos;
+       ros.header.seq=orocos.header.seq;
+       ros.header.frame_id=orocos.header.frame_id;
+@@ -326,19 +326,19 @@
+   };
+ 
+  template <>
+-  struct StdRosTypeConversion<MTTL_msgs::PositionMeasurement>
+-    : public RosTypeConversion<MTTL_msgs::PositionMeasurement,MTTL_msgs::PositionMeasurement>{
+-      static bool copyRosToOrocos(MTTL_msgs::PositionMeasurementConstPtr ros,MTTL_msgs::PositionMeasurement& orocos){
++  struct StdRosTypeConversion<MTTD_msgs::PositionMeasurement>
++    : public RosTypeConversion<MTTD_msgs::PositionMeasurement,MTTD_msgs::PositionMeasurement>{
++      static bool copyRosToOrocos(MTTD_msgs::PositionMeasurementConstPtr ros,MTTD_msgs::PositionMeasurement& orocos){
+ 	orocos=(*ros);
+ 	return true;
+       };
+-      static bool copyOrocosToRos(const MTTL_msgs::PositionMeasurement& orocos,MTTL_msgs::PositionMeasurement& ros){
++      static bool copyOrocosToRos(const MTTD_msgs::PositionMeasurement& orocos,MTTD_msgs::PositionMeasurement& ros){
+       ros=orocos;
+       return true;
+       };
+     };
+-    struct PositionMeasurementTypeInfo : public RTT::TemplateTypeInfo<MTTL_msgs::PositionMeasurement>{
+-	PositionMeasurementTypeInfo():RTT::TemplateTypeInfo<MTTL_msgs::PositionMeasurement>("PositionMeasurement")
++    struct PositionMeasurementTypeInfo : public RTT::TemplateTypeInfo<MTTD_msgs::PositionMeasurement>{
++	PositionMeasurementTypeInfo():RTT::TemplateTypeInfo<MTTD_msgs::PositionMeasurement>("PositionMeasurement")
+ 	{}
+     };
+     
+@@ -348,8 +348,8 @@
+     //People msg support by Enea Scioni
+      template <>
+     struct StdRosTypeConversion<PeopleData2>:
+-    public RosTypeConversion<MTTL_msgs::People,PeopleData2>{
+-    static bool copyRosToOrocos(MTTL_msgs::PeopleConstPtr ros,PeopleData2& orocos){
++    public RosTypeConversion<MTTD_msgs::People,PeopleData2>{
++    static bool copyRosToOrocos(MTTD_msgs::PeopleConstPtr ros,PeopleData2& orocos){
+     //The conversion code e.g. orocos=ros->data;
+     orocos.header.seq=ros->header.seq;
+     orocos.header.frame_id=ros->header.frame_id;
+@@ -378,7 +378,7 @@
+     orocos.num=ros->num;
+     return true;
+     };
+-    static bool copyOrocosToRos(const PeopleData2& orocos,MTTL_msgs::People& ros){
++    static bool copyOrocosToRos(const PeopleData2& orocos,MTTD_msgs::People& ros){
+     //The conversion code e.g. ros.data=orocos;
+     ros.header.seq=orocos.header.seq;
+     ros.header.stamp=orocos.header.stamp;;
+@@ -410,19 +410,19 @@
+   };
+ 
+  template <>
+-  struct StdRosTypeConversion<MTTL_msgs::People>
+-    : public RosTypeConversion<MTTL_msgs::People,MTTL_msgs::People>{
+-      static bool copyRosToOrocos(MTTL_msgs::PeopleConstPtr ros,MTTL_msgs::People& orocos){
++  struct StdRosTypeConversion<MTTD_msgs::People>
++    : public RosTypeConversion<MTTD_msgs::People,MTTD_msgs::People>{
++      static bool copyRosToOrocos(MTTD_msgs::PeopleConstPtr ros,MTTD_msgs::People& orocos){
+ 	orocos=(*ros);
+ 	return true;
+       };
+-      static bool copyOrocosToRos(const MTTL_msgs::People& orocos,MTTL_msgs::People& ros){
++      static bool copyOrocosToRos(const MTTD_msgs::People& orocos,MTTD_msgs::People& ros){
+       ros=orocos;
+       return true;
+       };
+     };
+-    struct PeopleTypeInfo : public RTT::TemplateTypeInfo<MTTL_msgs::People>{
+-	PeopleTypeInfo():RTT::TemplateTypeInfo<MTTL_msgs::People>("People")
++    struct PeopleTypeInfo : public RTT::TemplateTypeInfo<MTTD_msgs::People>{
++	PeopleTypeInfo():RTT::TemplateTypeInfo<MTTD_msgs::People>("People")
+ 	{}
+     };
+ 
+Index: src/RosToolkit.cpp
+===================================================================
+--- src/RosToolkit.cpp	(revisione 33414)
++++ src/RosToolkit.cpp	(copia locale)
+@@ -21,11 +21,11 @@
+     RTT::RosPortCreator::Instance()->registerType<CloudData>("CloudData");
+     RTT::RosPortCreator::Instance()->registerType<sensor_msgs::PointCloud>("PointCloud");
+     RTT::RosPortCreator::Instance()->registerType<PeopleData>("PeopleData");
+-    RTT::RosPortCreator::Instance()->registerType<MTTL_msgs::PeopleCoordinates>("PeopleCoordinates");
++    RTT::RosPortCreator::Instance()->registerType<MTTD_msgs::PeopleCoordinates>("PeopleCoordinates");
+     RTT::RosPortCreator::Instance()->registerType<MeasurementData>("MeasurementData");
+-    RTT::RosPortCreator::Instance()->registerType<MTTL_msgs::PositionMeasurement>("PositionMeasurement");
++    RTT::RosPortCreator::Instance()->registerType<MTTD_msgs::PositionMeasurement>("PositionMeasurement");
+     RTT::RosPortCreator::Instance()->registerType<PeopleData2>("PeopleData2");
+-    RTT::RosPortCreator::Instance()->registerType<MTTL_msgs::People>("People");
++    RTT::RosPortCreator::Instance()->registerType<MTTD_msgs::People>("People");
+    
+     //***********************************************************************************
+     RTT::types()->addType( new RTT::Float64TypeInfo());

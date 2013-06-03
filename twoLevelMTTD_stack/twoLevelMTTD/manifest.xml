@@ -1,0 +1,25 @@
+<package>
+  <description brief="twoLevelMTTD">
+
+     twoLevelMTTD is a package containing software for two-level multitarget
+tracking and detection.
+
+  </description>
+  <author>Tinne De Laet</author>
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://people.mech.kuleuven.be/~tdelaet/twoLevelMTTD/index.html</url>
+
+  <depend package="rtt_1.10" />
+  <depend package="ocl_1.10" />
+  <depend package="bfl_dataAssociationBranch" />
+  <depend package="dataAssociationMurty" />
+  <depend package="RBBM" />
+  <export>
+        <rosdoc config="rosdoc.yaml" />
+        <cpp cflags="-I${prefix}/src" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -ltwoLevelMTTD -lNumberObjectsEstimator -lVBClusters -lprepareSeparatedMeasurement"/>
+  </export>
+
+</package>
+
+

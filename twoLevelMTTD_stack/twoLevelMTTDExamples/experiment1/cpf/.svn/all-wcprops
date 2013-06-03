@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf
+END
+reporterTimings.cpf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/reporterTimings.cpf.xacro
+END
+NumberObjectsEstimator.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/NumberObjectsEstimator.cpf
+END
+reporterEstimationGaussianFile.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/reporterEstimationGaussianFile.cpf
+END
+VBClusters.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/VBClusters.cpf
+END
+PrepareSeparatedMeasurement.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/PrepareSeparatedMeasurement.cpf
+END
+SeparateObjects.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/SeparateObjects.cpf
+END
+ReadMeasurementsFile.cpf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/orocos/!svn/ver/33383/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/ReadMeasurementsFile.cpf.xacro
+END
+EstimationGaussianFile.cpf
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/orocos/!svn/ver/33382/trunk/kul-ros-pkg/stacks/twoLevelMTTD_stack/twoLevelMTTDExamples/experiment1/cpf/EstimationGaussianFile.cpf
+END
