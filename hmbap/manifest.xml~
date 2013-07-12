@@ -1,0 +1,14 @@
+<package>
+  <description brief="hmbap">
+
+     hmbap
+
+  </description>
+  <author>sid</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hmbap</url>
+
+</package>
+
+

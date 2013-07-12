@@ -88,7 +88,7 @@ floorplan
 (
   name "maze"
   bitmap "corridor.png"
-  size [11.2 6.72 2.0]
+  size [1.7 20.0 2.0]
   pose [0.0 0.0 0.0 0.0]
 )
 
@@ -105,15 +105,15 @@ roomba
 (		  
   # can refer to the robot by this name
   name "roomba"
-  pose [ -5 2.5 0 0 ] 
+  pose [ 0 5 0 0 ] 
  sicklaser() 
 # ctrl "wander"
 )
-#roomba
-#(		  
+roomba
+(		  
   # can refer to the robot by this name
-#  name "roomba2"
-#  pose [ 0 -3 0 0 ] 
-# sicklaser() 
+  name "roomba2"
+  pose [ 0.1 -4 0 0 ] 
+ sicklaser() 
 # ctrl "wander"
-#)
+)

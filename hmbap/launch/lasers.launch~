@@ -1,0 +1,5 @@
+<launch>
+<include file="$(find hmbap)/launch/lms100_and_filter.xml"/>
+<include file="$(find hmbap)/launch/hokuyo.xml"/>
+<include file="$(find hmbap)/launch/robot_state_pub.xml"/>
+</launch>

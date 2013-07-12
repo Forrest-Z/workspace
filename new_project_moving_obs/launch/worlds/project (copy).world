@@ -103,7 +103,7 @@ roomba
 (		  
   # can refer to the robot by this name
   name "roomba"
-  pose [ -5 3 0 0 ] 
+  pose [ -4 3 0 0 ] 
  sicklaser() 
 # ctrl "wander"
 )

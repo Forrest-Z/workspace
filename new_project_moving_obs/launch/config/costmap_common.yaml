@@ -6,7 +6,7 @@ raytrace_range: 3.0
 inscribed_radius: 0.25
 circumscribed_radius: 0.3
 robot_radius: 0.3
-inflation_radius: 0.31
+inflation_radius: 0.32
 cost_scaling_factor: 15.0
 lethal_cost_threshold: 100
 

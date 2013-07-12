@@ -1,0 +1,27 @@
+<launch>
+<!--for running rosbag-->
+<include file="$(find hmbap)/launch/bag.launch"/>
+<!--<param name="use_sim_time" value="true" />
+<node pkg="rosbag" type="play" name="player" output="screen" args="clock /home/sid/2013-07-02-14-46-27.bag"/>-->
+<!--
+for LMS
+<include file="$(find hmbap)/launch/lms100_and_filter.xml" />
+for hokuyo
+<include file="$(find hmbap)/launch/hokuyo.xml"/>
+-->
+
+<!--without p2os-->
+<node pkg="tf" type="static_transform_publisher" name="fake_localize" args="0 0 0 0 0 0 odom_combined base_link 10"/>
+
+<!--without gmapping-->
+<node pkg="tf" type="static_transform_publisher" name="fake_localize2" args="0 0 0 0 0 0 map odom_combined 10"/>
+
+<include file="$(find hmbap)/launch/robot_state_pub.xml" />
+<!--
+<node pkg="people_pos_vel_publisher" type="trajgen" name="people_pos_vel_gen"/>
+-->
+
+<include file="$(find leg_detector2)/launch/leg_detector.launch" />
+
+<node pkg="people_pos_vel_publisher" type="trajgen" name="people_pos_vel_publisher" />
+</launch>

@@ -9,7 +9,7 @@ DWAPlannerMovingObsROS:
   max_vel_x: .55
   min_vel_x: 0.05
   max_trans_vel: .55
-  min_trans_vel: 0.01
+  min_trans_vel: 0.05
   max_rot_vel: 2
   min_rot_vel: 0
   xy_goal_tolerance: 0.12

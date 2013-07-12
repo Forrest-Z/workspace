@@ -14,16 +14,16 @@ using namespace ros;
 using namespace tf;
 #define ODOM "base_pose_ground_truth"
 #define CMD_VEL "cmd_vel"
-const int numberOfPeople=1;
+const int numberOfPeople=2;
 // scale for attractive force towards goal(vel direction)
 const double goalScale=15;
 // min dist for repulsion force to act
 const double dmin=3;
 const double dminpeople=.95;
 // scale for repultion force
-const double obsScale=1;
+const double obsScale=.8;
 const double dT=.1;
-const double corridor_width=.3;
+const double corridor_width=.45;
 ofstream outfile;
 
 class OdometryMovingObs
@@ -50,12 +50,12 @@ void updateVelocities(int);
 void OdometryMovingObs::initialize_velocities(){
   geometry_msgs::Twist vel;
   obstacle_pos_vel_.number_of_obstacles=numberOfPeople;
-  vel.linear.x=0;vel.linear.y=-.3;vel.linear.z=0;
+  vel.linear.x=-0.2;vel.linear.y=0;vel.linear.z=0;
    vel.angular.x=0;vel.angular.y=0;vel.angular.z=0;
    obstacleVelocities.push_back(vel);
    initialVelocities.push_back(vel);
-   flags.push_back(0);
-  vel.linear.x=0.4;vel.linear.y=0;vel.linear.z=0;
+   flags.push_back(1);
+  vel.linear.x=0.3;vel.linear.y=0;vel.linear.z=0;
    obstacleVelocities.push_back(vel);
    initialVelocities.push_back(vel);
    flags.push_back(1);
@@ -86,7 +86,7 @@ void OdometryMovingObs::updateVelocities(int idx){
    dy=(obstacle_pos_vel_.odom[j].pose.pose.position.y-obstacle_pos_vel_.odom[idx-1].pose.pose.position.y);
    dist = sqrt(dx*dx+dy*dy);
    if (dist<dmin){
-     R= obsScale*(1/(dist-.6) - 1/(dmin));
+     R= obsScale*(1/(dist-.6) - 1/(dminpeople));
      Rx=Rx+R*dx;
      Ry=Ry+R*dy;
      }
@@ -94,14 +94,18 @@ void OdometryMovingObs::updateVelocities(int idx){
  //Net accl
  acc_x = Fx - Rx;
  acc_y = Fy - Ry;
+
+//update velocity
  obstacleVelocities[idx-1].linear.x = obstacleVelocities[idx-1].linear.x + acc_x*dT; 
  obstacleVelocities[idx-1].linear.y = obstacleVelocities[idx-1].linear.y + acc_y*dT;
-// velocity limits
+
+//velocity can't be negetive
+ if (obstacleVelocities[idx-1].linear.x*initialVelocities[idx-1].linear.x<0) obstacleVelocities[idx-1].linear.x=0;
+ if (obstacleVelocities[idx-1].linear.y*initialVelocities[idx-1].linear.y<0) obstacleVelocities[idx-1].linear.y=0;
 
  //if obstacle is hitting the wall make vel =0 in that direction
- if (obstacle_pos_vel_.odom[idx-1].pose.pose.position.x<2.2 && (obstacle_pos_vel_.odom[idx-1].pose.pose.position.y<-corridor_width || obstacle_pos_vel_.odom[idx-1].pose.pose.position.y>corridor_width))
+ if (obstacle_pos_vel_.odom[idx-1].pose.pose.position.y<-corridor_width || obstacle_pos_vel_.odom[idx-1].pose.pose.position.y>corridor_width)
    obstacleVelocities[idx-1].linear.y=0;
- if (obstacle_pos_vel_.odom[idx-1].pose.pose.position.x>3) obstacleVelocities[idx-1].linear.x=0;
 }
 
 OdometryMovingObs::OdometryMovingObs(ros::NodeHandle nh):
@@ -146,8 +150,8 @@ outfile<<idx<<' '<<(obstacle_pos_vel_.odom[idx-1]).pose.pose.position.x<<' '<<(o
 //Adding vel and flag info to Odometry msg (Stage does not seem to publish this) 
    obstacle_pos_vel_.odom[idx-1].twist.twist.linear.x=obstacleVelocities[idx-1].linear.x;
    obstacle_pos_vel_.odom[idx-1].twist.twist.linear.y=obstacleVelocities[idx-1].linear.y;
-   obstacle_pos_vel_.odom[idx-1].header.seq=int(flags[idx-1]);
-//     obstacle_pos_vel_.odom[idx-1].header.seq=0;
+//   obstacle_pos_vel_.odom[idx-1].header.seq=int(flags[idx-1]);
+   obstacle_pos_vel_.odom[idx-1].header.seq=0;
 //publish new_vel for StageROS (converting axis x=y and y=-x before publishing to stage)
    geometry_msgs::Twist vel;
    vel.linear.x=-obstacleVelocities[idx-1].linear.y;vel.linear.y=obstacleVelocities[idx-1].linear.x;vel.linear.z=0;
@@ -166,12 +170,11 @@ visualization_msgs::Marker m;
     m.pose.position.z = 0.5;
     m.scale.x = .6;
     m.scale.y = .6;
-    m.scale.z = 1;
     if (flags[idx-1]<.5){
-       m.color.a = 1; m.color.g = 0;m.color.r=1;
+      m.scale.z = 1; m.color.a = 1; m.color.g = 0;
       }
     else{
-       m.color.a = 1; m.color.g = 1;
+      m.scale.z = 1; m.color.a = 1; m.color.g = 1;
       }
     m.lifetime = ros::Duration(10000);
     markers_pub_.publish(m);   

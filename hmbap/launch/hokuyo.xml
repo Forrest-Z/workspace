@@ -1,0 +1,7 @@
+<launch>
+        <node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node" >
+		<!--<param name="port" type="string" value="/dev/ttyACM0"/>-->
+		<param name="frame_id" type="string" value="/base_laser_link"/>
+		<remap from="scan" to="hokoyu_scan" />
+	</node>
+</launch>

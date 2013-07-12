@@ -1,0 +1,10 @@
+<launch>
+<include file="$(find hmbap)/launch/lms100_and_filter.xml"/>
+<include file="$(find hmbap)/launch/hokuyo.xml"/>
+<include file="$(find hmbap)/launch/robot_state_pub.xml"/>
+<!--without p2os-->
+<node pkg="tf" type="static_transform_publisher" name="fake_localize" args="0 0 0 0 0 0 odom_combined base_link 10"/>
+
+<!--without gmapping-->
+<node pkg="tf" type="static_transform_publisher" name="fake_localize2" args="0 0 0 0 0 0 map odom_combined 10"/>
+</launch>

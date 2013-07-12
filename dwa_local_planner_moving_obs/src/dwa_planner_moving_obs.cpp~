@@ -163,6 +163,7 @@ namespace dwa_local_planner_moving_obs {
     odom_subs_ = n_.subscribe<dwa_local_planner_moving_obs::OdometryMovingObstacles>("OdometryMovingObstacles", 10, boost::bind(&DWAPlannerMovingObs::odom_received_callback, this,1, _1) );
     markers_pub_ = pn.advertise<visualization_msgs::Marker>("visualization_marker", 20);
     ObstaclePosVel_.number_of_obstacles=0;
+    count=0;
   }
 
   bool DWAPlannerMovingObs::getCellCosts(int cx, int cy, float &path_cost, float &goal_cost, float &occ_cost, float &total_cost) {
@@ -626,10 +627,10 @@ void DWAPlannerMovingObs::updateObstaclePos(Eigen::Vector3f pos, double dT){
      propagatedObstaclePosVel_.odom[i].pose.pose.position.y=propagatedObstaclePosVel_.odom[i].pose.pose.position.y + ObstaclePosVel_.odom[i].twist.twist.linear.y*dT;
    }
   else{
-        double Fx,Fy,dx,dy,dist,R,Rx,Ry,acc_x,acc_y,corridor_width=.55,goalScale=20,obsScale=.5,dmin=3;
-        corridor_width=obstacle_pos_vel_.header.seq;
-        Fx=goalScale*(ObstaclePosVel_.odom[i].twist.twist.linear.x-propagatedObstaclePosVel_.odom[i].twist.twist.linear.x);
-        Fy=goalScale*(ObstaclePosVel_.odom[i].twist.twist.linear.y-propagatedObstaclePosVel_.odom[i].twist.twist.linear.y);
+        double Fx,Fy,dx,dy,dist,R,Rx,Ry,acc_x,acc_y,corridor_width=.55,goalScale=25,obsScale=.8,dmin=3,dminpeople=.95;
+        corridor_width=ObstaclePosVel_.header.seq;
+        Fx=goalScale*(initialVelocities[i].linear.x-propagatedObstaclePosVel_.odom[i].twist.twist.linear.x);
+        Fy=goalScale*(initialVelocities[i].linear.y-propagatedObstaclePosVel_.odom[i].twist.twist.linear.y);
         
         //Repulsion due to robot
         dx=(pos[0]-propagatedObstaclePosVel_.odom[i].pose.pose.position.x);
@@ -651,8 +652,8 @@ void DWAPlannerMovingObs::updateObstaclePos(Eigen::Vector3f pos, double dT){
           dx=(propagatedObstaclePosVel_.odom[j].pose.pose.position.x-propagatedObstaclePosVel_.odom[i].pose.pose.position.x);
           dy=(propagatedObstaclePosVel_.odom[j].pose.pose.position.y-propagatedObstaclePosVel_.odom[i].pose.pose.position.y);
           dist = sqrt(dx*dx+dy*dy);
-          if (dist<dmin){
-            R= obsScale*(1/(dist-.6) - 1/(dmin));
+          if (dist<dminpeople){
+            R= obsScale*(1/(dist-.6) - 1/(dminpeople));
             Rx=Rx+R*dx;
             Ry=Ry+R*dy;
           }
@@ -665,6 +666,9 @@ void DWAPlannerMovingObs::updateObstaclePos(Eigen::Vector3f pos, double dT){
         propagatedObstaclePosVel_.odom[i].twist.twist.linear.x=propagatedObstaclePosVel_.odom[i].twist.twist.linear.x+acc_x*dT;
         propagatedObstaclePosVel_.odom[i].twist.twist.linear.y=propagatedObstaclePosVel_.odom[i].twist.twist.linear.y+acc_y*dT;
 
+        //velocity can't be negetive
+        if (propagatedObstaclePosVel_.odom[i].twist.twist.linear.x*initialVelocities[i].linear.x<0) propagatedObstaclePosVel_.odom[i].twist.twist.linear.x=0;
+        if (propagatedObstaclePosVel_.odom[i].twist.twist.linear.y*initialVelocities[i].linear.y<0) propagatedObstaclePosVel_.odom[i].twist.twist.linear.y=0;
      
         //if obstacle is hitting the wall make vel =0 in that direction
         if (propagatedObstaclePosVel_.odom[i].pose.pose.position.y<-corridor_width || propagatedObstaclePosVel_.odom[i].pose.pose.position.y>corridor_width)
@@ -680,13 +684,13 @@ void DWAPlannerMovingObs::updateObstaclePos(Eigen::Vector3f pos, double dT){
 //////////////Added - computes cost due to moving obstacles
   float DWAPlannerMovingObs::costMovingObs(const Eigen::Vector3f& pos)  {
       float d;
-      float max_cost,cost;
+      float max_cost=0,cost;
       for (int i=0;i<ObstaclePosVel_.number_of_obstacles;i++)
       {
 	d = (pos[0]-propagatedObstaclePosVel_.odom[i].pose.pose.position.x)*(pos[0]-propagatedObstaclePosVel_.odom[i].pose.pose.position.x)+(pos[1]-propagatedObstaclePosVel_.odom[i].pose.pose.position.y)*(pos[1]-propagatedObstaclePosVel_.odom[i].pose.pose.position.y);
 	if(d<.36) 
 	   return -1;	
-	cost = 20*exp(-10*(sqrt(d)-.6))*253;
+	cost = 10*exp(-10*(sqrt(d)-.6))*253;
         max_cost=std::max(max_cost,cost);
       }
       return max_cost;
@@ -695,9 +699,11 @@ void DWAPlannerMovingObs::updateObstaclePos(Eigen::Vector3f pos, double dT){
 
 /////////////Added - callback for odom received 
 void DWAPlannerMovingObs::odom_received_callback(int x, const boost::shared_ptr<dwa_local_planner_moving_obs::OdometryMovingObstacles const>& msg){
-ObstaclePosVel_=*msg;
-  visualization_msgs::Marker m;
-  for (int i=0;i<ObstaclePosVel_.number_of_obstacles;i++)  {    
+   ObstaclePosVel_=*msg;
+   visualization_msgs::Marker m;
+   count++;
+   for (int i=0;i<ObstaclePosVel_.number_of_obstacles;i++)  {    
+    if (count<2) initialVelocities.push_back(ObstaclePosVel_.odom[i].twist.twist);
     m.header.stamp = ObstaclePosVel_.header.stamp;
     m.header.frame_id = "/map";
     m.ns = "Obstacles";
